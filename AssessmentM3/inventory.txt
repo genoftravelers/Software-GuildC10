@@ -1,0 +1,10 @@
+Aloe Juice::3.99::9
+Yogurt with Granola::4.99::10
+Edamame::3.99::0
+Veggie Straws::3.99::6
+Avocado Crisp::5.49::9
+Beef Jerky::2.99::0
+Seltzer water::1.99::7
+Natural stream water::0.99::7
+Nutritional Bar::4.49::10
+Fruit Salad::6.99::10
