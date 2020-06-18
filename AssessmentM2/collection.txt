@@ -1,10 +1,13 @@
+karma::2020::broken::pg13::karam::karma
+Stranger Things::July 15, 2016::TV-14::Shawn Levy::Netflix::8.8 / 10
+Kozmo::1994::PG13::Universe::Nepal::Great
+Gita::1993::PG13::Universe::New Jersey::Great
 Tiger King::April 12 2o2o::MA::Eric Goode::Netflix::7.6 / 10
 Titanic 2::d::d::d::d::d
-karma::2020::broken::pg13::karam::karma::good
 Apple::2020::pg13::Pence::Pence::5
-Stranger Things::July 15, 2016::TV-14::Shawn Levy::Netflix::8.8 / 10
 Test::2020::pg13::karma::karma::good
 Glasses::2020::pg13::karma::karma::good
 Game Of Thrones::April 17, 2011::TV-MA::David Benioff and D.B.Weiss::HBO, IMAX::9.3/10
 Mt.Everest::Beginning of time::10::Higher Being::Nepal::10/10
 kite::2020::::karma::karma::4
+Karma::1998::PG13::Universe::Nepal::Great

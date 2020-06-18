@@ -5,6 +5,7 @@
  */
 package dvd.dao;
 
+import dvd.controller.DvdController;
 import dvd.dto.Dvd;
 import java.io.FileWriter;
 import java.time.LocalDate;
@@ -17,6 +18,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -41,7 +44,10 @@ public class DvdDaoFileImplTest {
     public void setUp() throws Exception {
         String testFile = "testcollection.txt";
         new FileWriter(testFile);//blanks the file
-        testDao = new DvdDaoFileImpl(testFile);
+        ApplicationContext ctx
+                = new ClassPathXmlApplicationContext("applicationContext.xml");
+        testDao
+                = ctx.getBean("DvdDao", DvdDao.class);
     }
 
     @AfterEach
@@ -53,11 +59,11 @@ public class DvdDaoFileImplTest {
         //Create our method test inputs
         String title = "Gita";
         Dvd dvd = new Dvd(title);
-        LocalDate releaseDate = LocalDate.parse("12/12/2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+        LocalDate releaseDate = LocalDate.parse("12-12-2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         dvd.setReleaseDate("1993");
         dvd.setMpaaRating("PG13");
         dvd.setDirectorName("Phabhupada");
-//        dvd.setStudio("India");
+        dvd.setStudio("India");
         dvd.setUserRatingOrNote("Great");
 
         //Add the dvd to the DAO
@@ -95,30 +101,30 @@ public class DvdDaoFileImplTest {
     public void testAddGetAllDvds() throws Exception {
         //Create our first dvd
         Dvd firstDvd = new Dvd("Gita");
-        LocalDate releaseDate = LocalDate.parse("12/12/2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+        LocalDate releaseDate = LocalDate.parse("12-12-2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         firstDvd.setReleaseDate("1993");
         firstDvd.setMpaaRating("PG13");
         firstDvd.setDirectorName("Universe");
         firstDvd.setStudio("New Jersey");
-//        firstDvd.setUserRatingOrNote("Great");
+        firstDvd.setUserRatingOrNote("Great");
 
         //Create out second dvd
         Dvd secondDvd = new Dvd("Kozmo");
-        LocalDate releaseDate2 = LocalDate.parse("12/13/2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+        LocalDate releaseDate2 = LocalDate.parse("12-13-2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         secondDvd.setReleaseDate("1994");
         secondDvd.setMpaaRating("PG13");
         secondDvd.setDirectorName("Universe");
         secondDvd.setStudio("Nepal");
-//        secondDvd.setUserRatingOrNote("Great");
+        secondDvd.setUserRatingOrNote("Great");
 
         //Create out third dvd
         Dvd thirdDvd = new Dvd("Karma");
-        LocalDate releaseDate3 = LocalDate.parse("12/14/2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+        LocalDate releaseDate3 = LocalDate.parse("12-14-2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         thirdDvd.setReleaseDate("1998");
         thirdDvd.setMpaaRating("PG13");
         thirdDvd.setDirectorName("Universe");
         thirdDvd.setStudio("Nepal");
-//        thirdDvd.setUserRatingOrNote("Great");
+        thirdDvd.setUserRatingOrNote("Great");
 
         testDao.addDvd(firstDvd.getTitle(), firstDvd);
         testDao.addDvd(secondDvd.getTitle(), secondDvd);
@@ -145,7 +151,7 @@ public class DvdDaoFileImplTest {
     public void testRemoveDvd() throws Exception {
         //Create third new dvds
         Dvd firstDvd = new Dvd("Gita");
-        LocalDate releaseDate = LocalDate.parse("12/12/2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+        LocalDate releaseDate = LocalDate.parse("12-12-2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         firstDvd.setReleaseDate("1993");
         firstDvd.setMpaaRating("PG13");
         firstDvd.setDirectorName("Universe");
@@ -155,7 +161,7 @@ public class DvdDaoFileImplTest {
 
         //Create out second dvd
         Dvd secondDvd = new Dvd("Kozmo");
-        LocalDate releaseDate2 = LocalDate.parse("12/13/2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+        LocalDate releaseDate2 = LocalDate.parse("12-13-2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         secondDvd.setReleaseDate("1994");
         secondDvd.setMpaaRating("PG13");
         secondDvd.setDirectorName("Universe");
@@ -165,7 +171,7 @@ public class DvdDaoFileImplTest {
 
         //Create out third dvd
         Dvd thirdDvd = new Dvd("Karma");
-        LocalDate releaseDate3 = LocalDate.parse("12/14/2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+        LocalDate releaseDate3 = LocalDate.parse("12-14-2010", DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         thirdDvd.setReleaseDate("1998");
         thirdDvd.setMpaaRating("PG13");
         thirdDvd.setDirectorName("Universe");

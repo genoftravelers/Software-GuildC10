@@ -56,7 +56,7 @@ public class DvdDaoFileImpl implements DvdDao {
         //requirement of the Dved constructor.
         Dvd dvdFromFile = new Dvd(title);
         
-        LocalDate releaseDateToken = LocalDate.parse(dvdTokens[1], DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+       // LocalDate releaseDateToken = LocalDate.parse(dvdTokens[1], DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         //However, there are 5 remaining tokens that need to be set into the
         //new dvd object. we do this manually using the setters.
         //Index 1 - releaseDate
@@ -113,9 +113,8 @@ public class DvdDaoFileImpl implements DvdDao {
         String dvdAsText = aDvd.getTitle() + DELIMITER;
         //Add the rest of the properties in the correct order.
         
-        dvdAsText += aDvd.getReleaseDate().formatted(DateTimeFormatter.ofPattern("MM-dd-yyyy")) + DELIMITER;
-        //release date
         dvdAsText += aDvd.getReleaseDate() + DELIMITER;
+        //release date
         //mpaarating
         dvdAsText += aDvd.getMpaaRating() + DELIMITER;
         //director name
