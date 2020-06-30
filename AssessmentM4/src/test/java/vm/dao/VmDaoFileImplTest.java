@@ -16,6 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import vm.dto.VmItem;
 
 /**
@@ -33,9 +35,14 @@ public class VmDaoFileImplTest {
 
     @BeforeEach
     public void setUp() throws Exception {
-        String testFile = "testInventory.txt";
-        new FileWriter(testFile);
-        testDao = new VmDaoFileImpl(testFile);
+       // String testFile = "testInventory.txt";
+        //new FileWriter(testFile);
+     //   testDao = new VmDaoFileImpl(testFile);
+        
+        ApplicationContext ctx
+                = new ClassPathXmlApplicationContext("applicationContext.xml");
+        testDao
+                = ctx.getBean("vmDao", VmDaoFileImpl.class);
     }
 
     @Test

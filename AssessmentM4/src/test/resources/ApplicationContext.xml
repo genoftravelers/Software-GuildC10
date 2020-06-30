@@ -18,7 +18,9 @@
  
     <!-- Bean definitions go here -->
     <bean id="vmDao" 
-          class="vm.dao.VmDaoFileImpl"/>
+          class="vm.dao.VmDaoFileImpl">
+        <constructor-arg value="testInventory.txt"/>
+    </bean>
    
     <bean id="vmDaoStub" 
           class="vm.service.VmDaoStubImpl"/>
