@@ -1,0 +1,2 @@
+01::Karma::Dolkar::c10
+02::Oompa ::Loompa::c10
