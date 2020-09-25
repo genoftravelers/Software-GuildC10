@@ -1,3 +1,0 @@
-Yogurt with Granola::4.99::10
-Avacado crisps::3.99::10
-Beef Jerkey::2.99::10

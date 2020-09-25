@@ -25,6 +25,7 @@ import vm.dto.VmItem;
  */
 public class VmDaoFileImpl implements VmDao {
 
+
     public final String INVENTORY_FILE;
     public static final String DELIMITER = "::";
 

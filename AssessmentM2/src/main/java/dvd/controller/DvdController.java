@@ -18,8 +18,6 @@ import java.util.List;
  *
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
-
-
 // dvd.controller.DvdController
 /*
 The Controller can "talk" to both View and the DAO but Dao and View cannot 
@@ -96,8 +94,10 @@ public class DvdController {
 
     private void listDvds() throws DvdDaoException {//ListDvds
         view.displayDisplayAllBanner();
+
         List<Dvd> dvdList = dao.getAllDvds();
         view.displayDvdList(dvdList);
+        
     }
 
     private void viewDvd() throws DvdDaoException {
