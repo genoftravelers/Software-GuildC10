@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Machine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="header" style="text-align: center">Zen Vending Machine</h1>
+        <hr>
+        <hr>
+        <div class="display-area">
+            <div class="items" id="itemArea">
+                <!-- <div class="box-item">
+                    <span class="itemId">1</span>
+                    <span class="itemName">Dried Sea Weed</span>
+                    <p class="itemPrice">$1.00</p>
+                    <p class="itemQuantity">Quantity Left: 10</p>
+                </div> -->
+
+            </div>
+            <div>
+                <form>
+                    <div class=" form-group ">
+                        <h4 style="text-align: center">Total $ In</h4>
+                        <input type="text" class="form-control" id="fullAmount" readonly>
+                    </div>
+                </form>
+                <div class="buttons">
+                    <button class="btn btn-dark" id="addDollar">Insert Dollar</button>
+                    <button type="button" class="btn btn-dark" id="addQuarter">Insert Quater</button>
+                    <button type="button" class="btn btn-dark" id="addDime">Insert Dime</button>
+                    <button type="button" class="btn btn-dark" id="addNickle">Insert Nickel</button>
+                </div>
+                <hr>
+                <div class="buyItemDiv">
+                    <form>
+                        <div class="form-group">
+                            <h4 id="message">Messages</h4>
+                            <input type="text" id="msg" class="form-control" name="message" readonly>
+                        </div>
+                    </form>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <h4>Item:</h4>
+                            <input id="itemId" name="itemId" type="text" class="form-control input-md" readonly>
+                        </div>
+                        <button type="button" id="makePurchase" class="btn btn-dark">Make Purchase</button>
+                    </form>
+                </div>
+
+                <div class="changeDiv">
+                    <hr>
+                    <h4>Change</h4>
+                    <input type="text" class="form-control" id="change" readonly>
+                    <br>
+                    <button class="btn btn-dark" id="changeButton">Change Return</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/dataService.js"></script>
+<script src="js/home.js"></script>
+
+</html>

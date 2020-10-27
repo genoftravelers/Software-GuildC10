@@ -1,0 +1,73 @@
+.display-area {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto;
+}
+
+.items {
+    display: grid;
+    /* using grid to make the columns*/
+    grid-template-columns: repeat(3, 1fr);
+    margin-right: 45px;
+    gap: 1em;
+    text-align: center;
+}
+
+#number {
+    text-align: left;
+}
+
+.box-item {
+    display: grid;
+    border: 2px solid black;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10px;
+}
+
+.buttons button {
+    margin: 7px;
+}
+
+.buyItemDiv {
+    text-align: center;
+}
+
+.box-item:hover {
+    border: solid black;
+    color: white;
+    background: #323232;
+}
+
+.changeDiv {
+    text-align: center;
+}
+
+@media screen and (max-width:750px) {
+    .items {
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width:751px) and (max-width:1200px) {
+    .items {
+        width: 75%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width:1201px) {
+    .items {
+        width: 95%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
