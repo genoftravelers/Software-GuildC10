@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+24,Karma:: Inc,CA,25.00,Carpet,143,2.25,2.10,321.75,300.30,155.51,777.56

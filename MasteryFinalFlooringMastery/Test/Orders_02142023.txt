@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+9,Karma,CA,25.00,Tile,342,3.50,4.15,1197.00,1419.30,654.08,3270.38

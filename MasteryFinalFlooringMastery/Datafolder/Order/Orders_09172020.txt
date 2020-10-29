@@ -1,0 +1,3 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+18,Kunga,WA,9.25,Wood,124,5.15,4.75,638.60,589.00,113.55,1341.15
+19,Karma,KY,6.00,Tile,153,3.50,4.15,535.50,634.95,70.23,1240.68

@@ -1,0 +1,375 @@
+2020-07-27T10:34:04.852022 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-27T10:34:04.853303 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-27T10:34:04.853532 : Thrown: run:: Message: -_- could not load product data in memory
+2020-07-27T15:37:39.532590 : Thrown: getAllOrdersForDate:: Message: Not supported yet.
+2020-07-27T15:37:39.533783 : Thrown: getAllOrders:: Message: Not supported yet.
+2020-07-27T15:37:39.533979 : Thrown: run:: Message: Not supported yet.
+2020-07-27T22:22:08.937433 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-27T22:22:08.938655 : Thrown: getAllOrders:: Message: null
+2020-07-27T22:22:08.938935 : Thrown: run:: Message: null
+2020-07-27T22:22:48.075759 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-27T22:22:48.076421 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-27T22:22:48.076628 : Thrown: run:: Message: -_- could not load product data in memory
+2020-07-27T22:23:33.198663 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-27T22:23:33.199493 : Thrown: getAllOrders:: Message: null
+2020-07-27T22:23:33.199745 : Thrown: run:: Message: null
+2020-07-27T22:24:29.061857 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-27T22:24:29.063079 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-27T22:24:29.063326 : Thrown: run:: Message: -_- could not load product data in memory
+2020-07-27T22:25:08.648900 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-27T22:25:08.649579 : Thrown: getAllOrders:: Message: null
+2020-07-27T22:25:08.649799 : Thrown: run:: Message: null
+2020-07-28T14:56:50.486577 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T14:56:50.487712 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T14:56:50.487928 : Thrown: run:: Message: -_- could not load product data in memory
+2020-07-28T14:57:14.018648 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-28T14:57:14.019694 : Thrown: getOrdersByDate:: Message: null
+2020-07-28T14:57:14.019971 : Thrown: run:: Message: null
+2020-07-28T19:47:51.334401 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T19:47:51.343186 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T19:51:07.405442 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T19:51:07.409508 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:02:31.351951 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:02:31.368515 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:05:12.470289 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:05:12.478249 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:20:51.850215 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:20:51.865479 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:27:37.450668 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:27:37.462026 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:34:36.429944 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:34:36.432264 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:35:40.595512 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:35:40.597468 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:38:01.225338 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:38:01.227700 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:39:07.401308 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:39:07.406156 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:40:00.840358 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:40:00.849646 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:43:00.543427 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:43:00.545989 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:49:23.742578 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:49:23.743412 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:51:30.077952 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-28T20:51:30.079255 : Thrown: getOrdersByDate:: Message: null
+2020-07-28T20:51:30.079481 : Thrown: run:: Message: null
+2020-07-28T20:53:20.667711 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-28T20:53:20.668794 : Thrown: getOrdersByDate:: Message: null
+2020-07-28T20:53:20.669117 : Thrown: run:: Message: null
+2020-07-28T20:54:31.036489 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T20:54:31.038888 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T20:54:52.438999 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T20:54:52.439552 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T20:54:52.439742 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T20:57:11.538807 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T20:57:11.539408 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T20:57:11.539582 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T20:57:52.317964 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T20:57:52.318485 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T20:57:52.318648 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:01:48.668747 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T21:01:48.670732 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T21:02:46.981227 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:02:46.981990 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:02:46.982308 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:31:35.527085 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T21:31:35.534298 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T21:32:05.277224 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:32:05.278167 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:32:05.278437 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:34:22.716157 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:34:22.719513 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:34:22.719917 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:34:47.964149 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:34:47.964883 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:34:47.965138 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:44:12.634866 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:44:12.636885 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:44:12.637190 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T21:47:38.722378 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T21:47:38.731082 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T21:48:10.746345 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T21:48:10.747343 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T21:48:51.783870 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T21:48:51.785575 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T21:49:48.933290 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T21:49:48.939531 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T21:54:57.973985 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T21:54:57.976283 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T21:55:50.406608 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-28T21:55:50.407958 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-28T22:04:21.148555 : Thrown: getAllProduct:: Message: Index 1 out of bounds for length 1
+2020-07-28T22:04:21.150085 : Thrown: getAllProducts:: Message: Index 1 out of bounds for length 1
+2020-07-28T22:04:21.150291 : Thrown: run:: Message: Index 1 out of bounds for length 1
+2020-07-28T22:07:57.516984 : Thrown: getAllTaxes:: Message: Not supported yet.
+2020-07-28T22:07:57.518331 : Thrown: run:: Message: Not supported yet.
+2020-07-28T22:13:31.136688 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:13:31.137880 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:13:31.138162 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:14:17.558339 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:14:17.559107 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:14:17.559407 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:15:56.441694 : Thrown: getNewOrderInfo:: Message: We do not do business in this state
+2020-07-28T22:18:34.962727 : Thrown: getNewOrderInfo:: Message: We do not have this product
+2020-07-28T22:20:37.832053 : Thrown: getOrderNumber:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:20:37.833272 : Thrown: validateOrder:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:20:37.833480 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:24:07.189869 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:24:07.192281 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:24:07.193022 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:36:52.770753 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:36:52.779285 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:36:52.779552 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:39:19.705463 : Thrown: getAllOrdersForDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:39:19.707943 : Thrown: getOrdersByDate:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:39:19.708352 : Thrown: run:: Message: For input string: "OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total"
+2020-07-28T22:42:54.835673 : Thrown: getAllOrdersForDate:: Message: For input string: "1,Ada, Lovelace,CA,25.00,Tile,249.00,3.50,4.15,871.50,1033.35,476.21,2381.06"
+2020-07-28T22:42:54.838980 : Thrown: getOrdersByDate:: Message: For input string: "1,Ada, Lovelace,CA,25.00,Tile,249.00,3.50,4.15,871.50,1033.35,476.21,2381.06"
+2020-07-28T22:42:54.839332 : Thrown: run:: Message: For input string: "1,Ada, Lovelace,CA,25.00,Tile,249.00,3.50,4.15,871.50,1033.35,476.21,2381.06"
+2020-07-28T22:44:08.027775 : Thrown: getAllOrdersForDate:: Message: For input string: "1,Ada Lovelace,CA,25.00,Tile,249.00,3.50,4.15,871.50,1033.35,476.21,2381.06"
+2020-07-28T22:44:08.028402 : Thrown: getOrdersByDate:: Message: For input string: "1,Ada Lovelace,CA,25.00,Tile,249.00,3.50,4.15,871.50,1033.35,476.21,2381.06"
+2020-07-28T22:44:08.028598 : Thrown: run:: Message: For input string: "1,Ada Lovelace,CA,25.00,Tile,249.00,3.50,4.15,871.50,1033.35,476.21,2381.06"
+2020-07-28T22:59:16.483912 : Thrown: getOrderNumber:: Message: null
+2020-07-28T22:59:16.485015 : Thrown: validateOrder:: Message: null
+2020-07-28T22:59:16.485264 : Thrown: run:: Message: null
+2020-07-28T23:00:15.036302 : Thrown: getOrderNumber:: Message: null
+2020-07-28T23:00:15.037414 : Thrown: validateOrder:: Message: null
+2020-07-28T23:00:15.037650 : Thrown: run:: Message: null
+2020-07-28T23:15:43.839404 : Thrown: getOrderNumber:: Message: Character C is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-07-28T23:15:43.841350 : Thrown: validateOrder:: Message: Character C is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-07-28T23:15:43.841888 : Thrown: run:: Message: Character C is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-07-28T23:43:01.921631 : Thrown: getAllOrdersForDate:: Message: Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-07-28T23:43:01.925259 : Thrown: getOrdersByDate:: Message: Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-07-28T23:43:01.925589 : Thrown: run:: Message: Character n is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-07-29T00:29:20.001807 : Thrown: validateOrder:: Message: ERROR: All fields[Customer Name, Date, State, ProductType, Area] required
+2020-07-29T14:37:30.418097 : Thrown: removeOrder:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T14:37:30.419178 : Thrown: removeAnOrder:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T14:37:30.419409 : Thrown: run:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T15:25:08.728242 : Thrown: removeOrder:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T15:25:08.729466 : Thrown: removeAnOrder:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T15:25:08.729725 : Thrown: run:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T16:52:24.247159 : Thrown: exportOrders:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T16:52:24.255401 : Thrown: exportAllData:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T16:52:24.255965 : Thrown: run:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T17:09:10.476886 : Thrown: getOrderNumber:: Message: null
+2020-07-29T17:09:10.484571 : Thrown: validateOrder:: Message: null
+2020-07-29T17:09:10.484946 : Thrown: run:: Message: null
+2020-07-29T17:24:48.306242 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:24:48.310102 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:25:13.428720 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:25:13.429638 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:27:48.353439 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:27:48.355614 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:34:04.281830 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:34:04.285435 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:34:24.764536 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-29T17:34:24.765454 : Thrown: getOrdersByDate:: Message: null
+2020-07-29T17:34:24.765711 : Thrown: run:: Message: null
+2020-07-29T17:36:06.387036 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:36:06.389708 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:38:39.637467 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:38:39.647172 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:41:58.430310 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:41:58.438611 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:44:34.464661 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:44:34.467030 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:45:03.653523 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:45:03.655654 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:52:32.544751 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:52:32.554292 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T17:55:00.063385 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T17:55:00.064918 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:00:09.661440 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-29T18:00:09.664219 : Thrown: getOrdersByDate:: Message: null
+2020-07-29T18:00:09.664577 : Thrown: run:: Message: null
+2020-07-29T18:00:20.173266 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:00:20.173878 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:03:45.386861 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:03:45.389200 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:07:35.655244 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:07:35.657445 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:10:09.870363 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:10:09.872458 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:12:28.339430 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:12:28.342014 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:13:26.348393 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:13:26.350701 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:20:17.459190 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:20:17.460377 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:22:08.848133 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:22:08.848847 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:24:54.315043 : Thrown: getAllProduct:: Message: -_- could not load product data in memory
+2020-07-29T18:24:54.315673 : Thrown: getAllProducts:: Message: -_- could not load product data in memory
+2020-07-29T18:28:53.326999 : Thrown: getAllProduct:: Message: -_- could not load product data in memory......
+2020-07-29T18:28:53.327900 : Thrown: getAllProducts:: Message: -_- could not load product data in memory......
+2020-07-29T18:30:22.319165 : Thrown: getAllTaxs:: Message: -_- could not load product data in memory
+2020-07-29T18:30:22.321287 : Thrown: getAllTaxes:: Message: -_- could not load product data in memory
+2020-07-29T18:31:52.293757 : Thrown: getNewOrderInfo:: Message: We do not do business in this state
+2020-07-29T18:44:19.885613 : Thrown: getOrderNumber:: Message: null
+2020-07-29T18:44:19.888105 : Thrown: validateOrder:: Message: null
+2020-07-29T18:44:19.888524 : Thrown: run:: Message: null
+2020-07-29T18:47:47.121247 : Thrown: getOrderNumber:: Message: null
+2020-07-29T18:47:47.128550 : Thrown: validateOrder:: Message: null
+2020-07-29T18:47:47.128979 : Thrown: run:: Message: null
+2020-07-29T18:52:18.385478 : Thrown: getOrderNumber:: Message: null
+2020-07-29T18:52:18.387573 : Thrown: validateOrder:: Message: null
+2020-07-29T18:52:18.388081 : Thrown: run:: Message: null
+2020-07-29T18:56:09.178838 : Thrown: getOrderNumber:: Message: null
+2020-07-29T18:56:09.187230 : Thrown: validateOrder:: Message: null
+2020-07-29T18:56:09.187593 : Thrown: run:: Message: null
+2020-07-29T18:58:43.413940 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-29T18:58:43.415585 : Thrown: getOrdersByDate:: Message: null
+2020-07-29T18:58:43.416017 : Thrown: run:: Message: null
+2020-07-29T19:11:23.702500 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-29T19:11:23.703494 : Thrown: getOrdersByDate:: Message: null
+2020-07-29T19:11:23.703666 : Thrown: run:: Message: null
+2020-07-29T19:12:38.236495 : Thrown: getOrderNumber:: Message: null
+2020-07-29T19:12:38.237124 : Thrown: validateOrder:: Message: null
+2020-07-29T19:12:38.237314 : Thrown: run:: Message: null
+2020-07-29T19:30:39.021080 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-29T19:30:39.022365 : Thrown: getOrdersByDate:: Message: null
+2020-07-29T19:30:39.022685 : Thrown: run:: Message: null
+2020-07-29T19:38:43.122229 : Thrown: getAllOrdersForDate:: Message: null
+2020-07-29T19:38:43.123555 : Thrown: getOrdersByDate:: Message: null
+2020-07-29T19:38:43.123746 : Thrown: run:: Message: null
+2020-07-29T19:54:27.351757 : Thrown: removeOrder:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T19:54:27.353081 : Thrown: removeAnOrder:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T19:54:27.353338 : Thrown: run:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T20:10:20.511055 : Thrown: run:: Message: null
+2020-07-29T20:16:44.326505 : Thrown: run:: Message: null
+2020-07-29T20:23:06.195786 : Thrown: removeOrder:: Message: This order Date does not exits.
+2020-07-29T20:23:06.199759 : Thrown: removeAnOrder:: Message: This order Date does not exits.
+2020-07-29T20:27:13.447643 : Thrown: exportOrders:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T20:27:13.451030 : Thrown: exportAllData:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T20:27:13.451417 : Thrown: run:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-29T20:28:15.009752 : Thrown: removeOrder:: Message: This order Date does not exits.
+2020-07-29T20:28:15.013457 : Thrown: removeAnOrder:: Message: This order Date does not exits.
+2020-07-29T20:30:53.710924 : Thrown: removeOrder:: Message: This order Date does not exits.
+2020-07-29T20:30:53.725500 : Thrown: removeAnOrder:: Message: This order Date does not exits.
+2020-07-29T20:32:44.566386 : Thrown: removeOrder:: Message: This order Date does not exits.
+2020-07-29T20:32:44.574089 : Thrown: removeAnOrder:: Message: This order Date does not exits.
+2020-07-29T20:43:54.654679 : Thrown: getOrderByDateandId:: Message: null
+2020-07-29T20:43:54.656758 : Thrown: getOrder:: Message: null
+2020-07-29T20:43:54.658943 : Thrown: run:: Message: null
+2020-07-29T20:52:34.144981 : Thrown: getOrderByDateandId:: Message: null
+2020-07-29T20:52:34.147635 : Thrown: getOrder:: Message: null
+2020-07-29T20:52:34.147956 : Thrown: run:: Message: null
+2020-07-29T20:58:33.163188 : Thrown: removeOrder:: Message: This order Date does not exits.
+2020-07-29T20:58:33.170069 : Thrown: removeAnOrder:: Message: This order Date does not exits.
+2020-07-29T20:59:58.227410 : Thrown: removeOrder:: Message: This order Date does not exits.
+2020-07-29T20:59:58.229209 : Thrown: removeAnOrder:: Message: This order Date does not exits.
+2020-07-29T21:20:26.504781 : Thrown: confirmNewOrder:: Message: null
+2020-07-29T21:20:26.512879 : Thrown: run:: Message: null
+2020-07-29T21:23:59.147448 : Thrown: getNewOrderInfo:: Message: We do not have this product
+2020-07-29T23:14:31.700223 : Thrown: getOrderByDateandId:: Message: For input string: ""
+2020-07-29T23:14:31.701764 : Thrown: getOrder:: Message: For input string: ""
+2020-07-29T23:14:31.701967 : Thrown: run:: Message: For input string: ""
+2020-07-29T23:34:43.722198 : Thrown: getOrderNumber:: Message: null
+2020-07-29T23:34:43.724124 : Thrown: validateOrder:: Message: null
+2020-07-29T23:34:43.724412 : Thrown: run:: Message: null
+2020-07-30T00:52:45.506147 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-07-30T00:52:45.512624 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-07-30T00:53:49.851081 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-07-30T00:53:49.851730 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-07-30T00:54:32.467832 : Thrown: getEditedOrderInfo:: Message: null
+2020-07-30T00:54:32.468369 : Thrown: run:: Message: null
+2020-07-30T01:05:33.388919 : Thrown: exportOrders:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-30T01:05:33.396717 : Thrown: exportAllData:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-30T01:05:33.397088 : Thrown: run:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-30T01:07:39.450806 : Thrown: exportOrders:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-30T01:07:39.452047 : Thrown: exportAllData:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-30T01:07:39.452314 : Thrown: run:: Message: class java.util.HashMap cannot be cast to class fm.dto.FmOrder (java.util.HashMap is in module java.base of loader 'bootstrap'; fm.dto.FmOrder is in unnamed module of loader 'app')
+2020-07-30T16:43:37.944098 : Thrown: getAllProduct:: Message: Character C is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-07-30T16:43:37.951427 : Thrown: getAllProducts:: Message: Character C is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-07-30T16:43:37.951688 : Thrown: run:: Message: Character C is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T10:33:43.124193 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-08-04T10:33:43.124756 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-08-04T11:24:23.411571 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-08-04T11:24:23.413399 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-08-04T11:27:50.583017 : Thrown: getAllOrdersForDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:27:50.583248 : Thrown: getOrdersByDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:27:50.583654 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:28:52.006189 : Thrown: getAllOrdersForDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:28:52.009340 : Thrown: getOrdersByDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:28:52.009564 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:29:38.429739 : Thrown: getAllOrdersForDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:29:38.433194 : Thrown: getOrdersByDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:29:38.433573 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:30:52.915814 : Thrown: getAllOrdersForDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:30:52.917188 : Thrown: getOrdersByDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T11:30:52.917493 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:00:46.909660 : Thrown: getAllOrdersForDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:00:46.910937 : Thrown: getOrdersByDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:00:46.911286 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:01:55.075080 : Thrown: getNewOrderInfo:: Message: We do not do business in this state
+2020-08-04T19:02:51.276843 : Thrown: getOrderNumber:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:02:51.277502 : Thrown: validateOrder:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:02:51.277736 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:03:48.045438 : Thrown: getOrderNumber:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:03:48.048143 : Thrown: validateOrder:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:03:48.048565 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:04:44.538383 : Thrown: getOrderNumber:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:04:44.540434 : Thrown: validateOrder:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:04:44.541154 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:05:14.507651 : Thrown: getOrderNumber:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:05:14.508330 : Thrown: validateOrder:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:05:14.508602 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:06:49.574946 : Thrown: getAllOrdersForDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:06:49.575836 : Thrown: getOrdersByDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:06:49.576055 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:09:21.479030 : Thrown: getAllOrdersForDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:09:21.480283 : Thrown: getOrdersByDate:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:09:21.480480 : Thrown: run:: Message: Character T is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+2020-08-04T19:19:33.402456 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-08-04T19:19:33.403582 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-08-04T19:35:28.473753 : Thrown: getAllOrdersForDate:: Message: null
+2020-08-04T19:35:28.475883 : Thrown: getOrdersByDate:: Message: null
+2020-08-04T19:35:28.476429 : Thrown: run:: Message: null
+2020-08-04T20:02:29.073159 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-08-04T20:02:29.074376 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-08-04T20:03:39.899298 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-08-04T20:03:39.901248 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-08-04T20:20:19.588497 : Thrown: getNewOrderInfo:: Message: We do not do business in this state
+2020-08-04T20:25:27.413725 : Thrown: getNewOrderInfo:: Message: We do not have this product
+2020-08-04T20:32:41.500176 : Thrown: getNewOrderInfo:: Message: We do not do business in this state
+2020-08-04T20:52:25.425258 : Thrown: getNewOrderInfo:: Message: null
+2020-08-04T20:52:25.426666 : Thrown: run:: Message: null
+2020-08-04T20:55:59.857295 : Thrown: validateOrder:: Message: Error: We do not sell in your place.
+2020-08-04T21:06:27.584370 : Thrown: validateOrder:: Message: Uncompilable source code - validateOrder(fm.dto.FmOrder) in fm.service.FmServiceImpl cannot implement validateOrder(fm.dto.FmOrder) in fm.service.FmService
+  overridden method does not throw fm.dao.FmInvalidProductException
+2020-08-04T21:06:27.586426 : Thrown: run:: Message: Uncompilable source code - validateOrder(fm.dto.FmOrder) in fm.service.FmServiceImpl cannot implement validateOrder(fm.dto.FmOrder) in fm.service.FmService
+  overridden method does not throw fm.dao.FmInvalidProductException
+2020-08-04T21:11:03.892455 : Thrown: validateOrder:: Message: ERROR: All fields[Customer Name, Date, State, ProductType, Area] required
+2020-08-04T21:11:39.390628 : Thrown: validateOrder:: Message: Error: we do not sell this product
+2020-08-04T21:12:08.592097 : Thrown: validateOrder:: Message: Error: We do not sell in your place.
+2020-08-04T21:16:45.213072 : Thrown: validateOrder:: Message: ERROR: Invalid Product
+2020-08-04T21:19:26.822099 : Thrown: validateOrder:: Message: ERROR: Invalid Tax
+2020-08-04T21:29:30.932565 : Thrown: validateOrder:: Message: ERROR: Invalid Tax
+2020-08-04T21:30:50.452263 : Thrown: validateOrder:: Message: ERROR: Invalid Tax
+2020-08-04T21:31:27.399870 : Thrown: validateOrder:: Message: ERROR: Invalid State
+2020-08-04T21:31:52.695600 : Thrown: validateOrder:: Message: ERROR: Invalid Product
+2020-08-04T21:47:41.885061 : Thrown: validateOrder:: Message: ERROR: Invalid State
+2020-08-04T21:48:06.769685 : Thrown: validateOrder:: Message: ERROR: Invalid Product
+2020-08-04T21:48:18.718344 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-08-04T21:48:18.718604 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-08-04T22:39:29.950220 : Thrown: validateOrder:: Message: null
+2020-08-04T22:39:29.951163 : Thrown: run:: Message: null
+2020-08-04T22:46:11.894573 : Thrown: validateOrder:: Message: null
+2020-08-04T22:46:11.895112 : Thrown: run:: Message: null
+2020-08-04T22:46:52.159882 : Thrown: validateOrder:: Message: ERROR: Invalid State
+2020-08-04T22:48:38.860694 : Thrown: validateOrder:: Message: ERROR: Invalid Product
+2020-08-04T22:49:01.299725 : Thrown: validateOrder:: Message: null
+2020-08-04T22:49:01.299930 : Thrown: run:: Message: null
+2020-08-04T22:50:55.043171 : Thrown: validateOrder:: Message: null
+2020-08-04T22:50:55.044133 : Thrown: run:: Message: null
+2020-08-05T00:15:08.542801 : Thrown: validateOrder:: Message: ERROR: Invalid State
+2020-08-05T00:37:10.532323 : Thrown: getAllOrdersForDate:: Message: Nothing to retrieve
+2020-08-05T00:37:10.533626 : Thrown: getOrdersByDate:: Message: Nothing to retrieve
+2020-08-05T00:49:58.840640 : Thrown: validateOrder:: Message: Error: Customer name can only contain [a-z][0-9][periods and comma]
+2020-08-05T00:56:12.159186 : Thrown: validateOrder:: Message: Error: Name should only contain [a-z][0-9][periods and comma]
+2020-08-06T09:29:45.082895 : Thrown: validateOrder:: Message: ERROR: Invalid Product
+2020-08-06T10:17:11.117183 : Thrown: validateOrder:: Message: Error: Name should only contain [a-z][0-9][periods and comma]
+2020-08-06T10:18:02.300217 : Thrown: validateOrder:: Message: ERROR: Invalid State
+2020-08-06T10:18:45.074132 : Thrown: validateOrder:: Message: ERROR: Invalid Product
+2020-08-12T16:15:07.702258 : Thrown: validateOrder:: Message: ERROR: All fields[Customer Name, Date, State, ProductType, Area] required

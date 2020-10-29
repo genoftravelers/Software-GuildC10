@@ -1,0 +1,5 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+2,Yaashi,CA,25.00,Laminate,142,1.75,2.10,248.50,298.20,136.68,683.38
+3,Yoora,WA,9.25,Wood,421,5.15,4.75,2168.15,1999.75,385.53,4553.43
+4,Kai,CA,9.25,Tile,155,5.15,4.75,798.25,736.25,141.94,1676.44
+5,Karina,CA,9.25,Wood,123,5.15,4.75,633.45,584.25,112.64,1330.34

@@ -1,0 +1,4 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+6,Shazena,TX,4.45,Wood,123,5.15,4.75,633.45,584.25,54.19,1271.89
+7,Karma,CA,4.45,Laminate,234,5.15,4.75,1205.10,1111.50,103.09,2419.69
+8,Shazena,CA,25.00,Tile,123,3.50,4.15,430.50,510.45,235.24,1176.19

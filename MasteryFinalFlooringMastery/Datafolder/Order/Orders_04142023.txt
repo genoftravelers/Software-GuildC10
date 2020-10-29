@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+21,Syerin:: inc,TX,4.45,Wood,143,5.15,4.75,736.45,679.25,63.00,1478.70

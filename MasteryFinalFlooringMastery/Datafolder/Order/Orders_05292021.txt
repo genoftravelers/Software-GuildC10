@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+16,Kunga:: Inc,CA,25.00,Wood,243,5.15,4.75,1251.45,1154.25,601.43,3007.13
