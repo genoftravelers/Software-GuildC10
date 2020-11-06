@@ -3,12 +3,60 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.KarmaSuperHero.controller;
+package com.sg.KarmaSuperHero.Controller;
+
+import com.sg.KarmaSuperHero.dao.HeroDao;
+import com.sg.KarmaSuperHero.dao.LocationDao;
+import com.sg.KarmaSuperHero.dao.OrganizationDao;
+import com.sg.KarmaSuperHero.dto.Hero;
+import com.sg.KarmaSuperHero.dto.Location;
+import com.sg.KarmaSuperHero.dto.Organization;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import javax.validation.ConstraintViolation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  *
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
+@Controller
 public class OrganizationController {
+
+    @Autowired
+    LocationDao locationDao;
+    @Autowired
+    OrganizationDao organizationDao;
+    @Autowired
+    HeroDao heroDao;
     
+//    @GetMapping("organizations")
+//    public String displayOrganizations(Model model){
+//        List <Organization> organizations = organizationDao.getAllOrganizations();
+//        model.addAttribute("organizations", organizations);
+//        return "organizations";
+//    }
+    
+//     Set<ConstraintViolation<Organization>> violations = new HashSet<>();
+
+    @GetMapping("organizations")
+    public String displayOrganizations(Model model) {
+        List<Organization> organizations = organizationDao.getAllOrganizations();
+        List<Hero> heroes = heroDao.getAllHeroes();
+        List<Location> locations = locationDao.getAllLocations();
+        model.addAttribute("organizations", organizations);
+        model.addAttribute("heroes", heroes);
+        model.addAttribute("locations", locations);
+//        model.addAttribute("errors", violations);
+        return "organizations";
+    }
+//    @PostMapping("addOrganization")
+//
+//    }
+            
+
 }

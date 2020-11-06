@@ -79,7 +79,8 @@ public class HeroDaoDB implements HeroDao {
         jdbc.update(UPDATE_HERO,
                 hero.getHeroName(),
                 hero.getHeroDescription(),
-                hero.getSuperPower().getSuperpowerId());
+                hero.getSuperPower().getSuperpowerId(),
+                hero.getHeroId());
 
         final String DELETE_HERO_ORGANIZATION = "DELETE FROM HeroOrganization WHERE heroId = ?";
         jdbc.update(DELETE_HERO_ORGANIZATION, hero.getHeroId());
@@ -87,6 +88,7 @@ public class HeroDaoDB implements HeroDao {
 
     @Override
     public void deleteHeroById(int id) {
+        
         final String DELETE_HERO_SIGHTING = "DELETE FROM Sighting WHERE heroId = ?";
         jdbc.update(DELETE_HERO_SIGHTING, id);
 
@@ -101,7 +103,7 @@ public class HeroDaoDB implements HeroDao {
     public List<Hero> getHeroesBySuperpower(Superpower superPower) {
         final String GET_HEROES_BY_SUPERPOWER
                 = "SELECT * FROM Hero h "
-                + "WHERE h.Superpower_superpowerId = ?";
+                + "WHERE h.superpowerId = ?";
 
         List<Hero> heroes = jdbc.query(GET_HEROES_BY_SUPERPOWER,
                 new HeroMapper(), superPower.getSuperpowerId());

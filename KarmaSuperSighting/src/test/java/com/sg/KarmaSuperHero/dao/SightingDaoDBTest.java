@@ -10,8 +10,10 @@ import com.sg.KarmaSuperHero.dto.Location;
 import com.sg.KarmaSuperHero.dto.Organization;
 import com.sg.KarmaSuperHero.dto.Sighting;
 import com.sg.KarmaSuperHero.dto.Superpower;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
-import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -29,70 +31,106 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SightingDaoDBTest {
-    
+
     @Autowired
     SuperpowerDao superpowerDao;
-    
+
     @Autowired
     SightingDao sightingDao;
-    
+
     @Autowired
     HeroDao heroDao;
-    
+
     @Autowired
     OrganizationDao organizationDao;
-    
+
     @Autowired
     LocationDao locationDao;
-    
+
     public SightingDaoDBTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
-         List<Superpower> superpowers = superpowerDao.getAllSuperpowers();
-        for (Superpower superpower : superpowers) {
-            superpowerDao.deleteSuperpowerById(superpower.getSuperpowerId());
-        }
-        
-        List<Location> locations = locationDao.getAllLocations();
-        for (Location location : locations) {
-            locationDao.deleteLocationById(location.getLocationId());
-        }
-        
-        List<Hero> heroes = heroDao.getAllHeroes();
-        
-        for (Hero hero : heroes) {
-            heroDao.deleteHeroById(hero.getHeroId());
-        }
-        
-        List<Organization> organizations = organizationDao.getAllOrganizations();
-        
-        for (Organization organization : organizations) {
-            organizationDao.deleteOrganizationById(organization.getOrganizationId());
-        }
-        
+
         List<Sighting> sightings = sightingDao.getAllSightings();
-        
+
         for (Sighting sighting : sightings) {
             sightingDao.deleteSightingById(sighting.getSightingId());
         }
+
+        List<Organization> organizations = organizationDao.getAllOrganizations();
+
+        for (Organization organization : organizations) {
+            organizationDao.deleteOrganizationById(organization.getOrganizationId());
+        }
+        List<Location> locations = locationDao.getAllLocations();
+        for (Location location : locations) {
+            locationDao.deleteLocationById(location.getLocationId());
+
+        }
+
+        List<Hero> heroes = heroDao.getAllHeroes();
+
+        for (Hero hero : heroes) {
+            heroDao.deleteHeroById(hero.getHeroId());
+        }
+
     }
-    
 
     /**
      * Test of getSightingById method, of class SightingDaoDB.
      */
     @Test
-    public void testGetSightingById() {
+    public void testAddGetSightingById() {
+
+        Superpower mindReading = new Superpower();
+        mindReading.setSuperpowerName("MindReading");
+        mindReading = superpowerDao.addSuperpower(mindReading);
+
+        Hero Spiderman = new Hero();
+        Spiderman.setHeroName("Spiderman");
+        Spiderman.setHeroDescription("can read mind");
+        Spiderman.setSuperPower(mindReading);
+
+        Spiderman = heroDao.addHero(Spiderman);
+
+        BigDecimal latitude = new BigDecimal("37.455000");
+        BigDecimal longitude = new BigDecimal("55.155000");
+
+        Location thePost = new Location();
+        thePost.setLocationDescription("calm the mind");
+        thePost.setLocationAddress("454 The way");
+        thePost.setLocationCity("Queens");
+        thePost.setLocationState("NY");
+        thePost.setZipCode("11372");
+        thePost.setLocationName("The post");
+        thePost.setLatitude(latitude);
+        thePost.setLongitude(longitude);
+
+        thePost = locationDao.addLocation(thePost);
+
+        Sighting currentSighting = new Sighting();
+
+        LocalDate date = LocalDate.parse("2017-02-05");
+
+        currentSighting.setDate(date);
+        currentSighting.setHero(Spiderman);
+        currentSighting.setLocation(thePost);
+
+        currentSighting = sightingDao.addSighting(currentSighting);
+
+        Sighting result = sightingDao.getSightingById(currentSighting.getSightingId());
+
+        assertEquals(currentSighting, result);
     }
 
     /**
@@ -100,13 +138,60 @@ public class SightingDaoDBTest {
      */
     @Test
     public void testGetAllSightings() {
-    }
 
-    /**
-     * Test of addSighting method, of class SightingDaoDB.
-     */
-    @Test
-    public void testAddSighting() {
+        Superpower mindReading = new Superpower();
+        mindReading.setSuperpowerName("Flight");
+        mindReading = superpowerDao.addSuperpower(mindReading);
+        Hero Spiderman = new Hero();
+        Spiderman.setHeroName("Spiderman");
+        Spiderman.setHeroDescription("flies");
+        Spiderman.setSuperPower(mindReading);
+
+        Spiderman = heroDao.addHero(Spiderman);
+
+        BigDecimal latitude = new BigDecimal("32.515000");
+        BigDecimal longitude = new BigDecimal("75.255000");
+
+        Location thePost = new Location();
+        thePost.setLocationDescription("calm the mind");
+        thePost.setLocationAddress("454 The way");
+        thePost.setLocationCity("Queens");
+        thePost.setLocationState("NY");
+        thePost.setZipCode("11372");
+        thePost.setLocationName("The post");
+        thePost.setLatitude(latitude);
+        thePost.setLongitude(longitude);
+
+        thePost = locationDao.addLocation(thePost);
+
+        Sighting sightingOne = new Sighting();
+
+        LocalDate date = LocalDate.parse("2015-06-17");
+
+        sightingOne.setDate(date);
+        sightingOne.setHero(Spiderman);
+        sightingOne.setLocation(thePost);
+
+        sightingOne = sightingDao.addSighting(sightingOne);
+
+        Sighting sightingTwo = new Sighting();
+
+        LocalDate dateTwo = LocalDate.parse("2016-09-05");
+
+        sightingTwo.setDate(dateTwo);
+        sightingTwo.setHero(Spiderman);
+        sightingTwo.setLocation(thePost);
+
+        sightingTwo = sightingDao.addSighting(sightingTwo);
+
+        List<Sighting> sightings = new ArrayList<>();
+
+        sightings.add(sightingOne);
+        sightings.add(sightingTwo);
+
+        List<Sighting> result = sightingDao.getAllSightings();
+
+        assertEquals(sightings, result);
     }
 
     /**
@@ -114,6 +199,52 @@ public class SightingDaoDBTest {
      */
     @Test
     public void testUpdateSighting() {
+        Superpower mindReading = new Superpower();
+        mindReading.setSuperpowerName("Flight");
+        mindReading = superpowerDao.addSuperpower(mindReading);
+        Hero Spiderman = new Hero();
+        Spiderman.setHeroName("Spiderman");
+        Spiderman.setHeroDescription("flies");
+        Spiderman.setSuperPower(mindReading);
+
+        Spiderman = heroDao.addHero(Spiderman);
+
+        BigDecimal latitude = new BigDecimal("32.515000");
+        BigDecimal longitude = new BigDecimal("75.255000");
+
+        Location thePost = new Location();
+        thePost.setLocationDescription("calm the mind");
+        thePost.setLocationAddress("454 The way");
+        thePost.setLocationCity("Queens");
+        thePost.setLocationState("NY");
+        thePost.setZipCode("11372");
+        thePost.setLocationName("The post");
+        thePost.setLatitude(latitude);
+        thePost.setLongitude(longitude);
+
+        thePost = locationDao.addLocation(thePost);
+
+        Sighting currentSighting = new Sighting();
+
+        LocalDate date = LocalDate.parse("2015-06-17");
+
+        currentSighting.setDate(date);
+        currentSighting.setHero(Spiderman);
+        currentSighting.setLocation(thePost);
+
+        currentSighting = sightingDao.addSighting(currentSighting);
+
+        LocalDate newDate = LocalDate.parse("2016-09-05");
+
+        currentSighting.setDate(newDate);
+
+        sightingDao.updateSighting(currentSighting);
+
+        Sighting sighting = sightingDao.getSightingById(currentSighting.getSightingId());
+
+        LocalDate result = sighting.getDate();
+
+        assertEquals(newDate, result);
     }
 
     /**
@@ -121,6 +252,54 @@ public class SightingDaoDBTest {
      */
     @Test
     public void testDeleteSightingById() {
+
+        Superpower mindReading = new Superpower();
+        mindReading.setSuperpowerName("Flight");
+        mindReading = superpowerDao.addSuperpower(mindReading);
+        Hero Spiderman = new Hero();
+        Spiderman.setHeroName("Spiderman");
+        Spiderman.setHeroDescription("flies");
+        Spiderman.setSuperPower(mindReading);
+
+        Spiderman = heroDao.addHero(Spiderman);
+
+        BigDecimal latitude = new BigDecimal("32.515000");
+        BigDecimal longitude = new BigDecimal("75.255000");
+
+        Location thePost = new Location();
+        thePost.setLocationDescription("calm the mind");
+        thePost.setLocationAddress("454 The way");
+        thePost.setLocationCity("Queens");
+        thePost.setLocationState("NY");
+        thePost.setZipCode("11372");
+        thePost.setLocationName("The post");
+        thePost.setLatitude(latitude);
+        thePost.setLongitude(longitude);
+
+        thePost = locationDao.addLocation(thePost);
+
+        Sighting currentSighting = new Sighting();
+
+        LocalDate date = LocalDate.parse("2015-06-17");
+
+        currentSighting.setDate(date);
+        currentSighting.setHero(Spiderman);
+        currentSighting.setLocation(thePost);
+
+        currentSighting = sightingDao.addSighting(currentSighting);
+
+        LocalDate newDate = LocalDate.parse("2016-09-05");
+        currentSighting.setDate(date);
+        currentSighting.setHero(Spiderman);
+        currentSighting.setLocation(thePost);
+
+        currentSighting = sightingDao.addSighting(currentSighting);
+
+        sightingDao.deleteSightingById(currentSighting.getSightingId());
+
+        Sighting result = sightingDao.getSightingById(currentSighting.getSightingId());
+
+        assertNull(result);
     }
 
     /**
@@ -128,6 +307,78 @@ public class SightingDaoDBTest {
      */
     @Test
     public void testGetSightingsOfHero() {
+
+        Superpower mindReading = new Superpower();
+        mindReading.setSuperpowerName("Flight");
+        mindReading = superpowerDao.addSuperpower(mindReading);
+        Hero Spiderman = new Hero();
+        Spiderman.setHeroName("Spiderman");
+        Spiderman.setHeroDescription("flies");
+        Spiderman.setSuperPower(mindReading);
+
+        Spiderman = heroDao.addHero(Spiderman);
+
+        BigDecimal latitude = new BigDecimal("32.515000");
+        BigDecimal longitude = new BigDecimal("75.255000");
+
+        Location thePost = new Location();
+        thePost.setLocationDescription("calm the mind");
+        thePost.setLocationAddress("454 The way");
+        thePost.setLocationCity("Queens");
+        thePost.setLocationState("NY");
+        thePost.setZipCode("11372");
+        thePost.setLocationName("The post");
+        thePost.setLatitude(latitude);
+        thePost.setLongitude(longitude);
+
+        thePost = locationDao.addLocation(thePost);
+
+        Superpower flight = new Superpower();
+        flight.setSuperpowerName("Flight");
+        flight = superpowerDao.addSuperpower(flight);
+
+        Hero Kingkong = new Hero();
+        Kingkong.setHeroName("KingKong");
+        Kingkong.setHeroDescription("He ruins Christmas");
+        Kingkong.setSuperPower(mindReading);
+
+        Kingkong = heroDao.addHero(Kingkong);
+
+        Sighting sightingOne = new Sighting();
+
+        LocalDate date = LocalDate.parse("2017-02-05");
+
+        sightingOne.setDate(date);
+        sightingOne.setHero(Spiderman);
+        sightingOne.setLocation(thePost);
+
+        sightingOne = sightingDao.addSighting(sightingOne);
+
+        Sighting sightingTwo = new Sighting();
+
+        LocalDate date2 = LocalDate.parse("2017-03-10");
+
+        sightingTwo.setDate(date2);
+        sightingTwo.setHero(Spiderman);
+        sightingTwo.setLocation(thePost);
+
+        sightingTwo = sightingDao.addSighting(sightingTwo);
+
+        Sighting sightingThree = new Sighting();
+
+        sightingThree.setDate(date);
+        sightingThree.setHero(Kingkong);
+        sightingThree.setLocation(thePost);
+
+        sightingThree = sightingDao.addSighting(sightingThree);
+
+        List<Sighting> spidermanSightings = new ArrayList<>();
+        spidermanSightings.add(sightingOne);
+        spidermanSightings.add(sightingTwo);
+
+        List<Sighting> result = sightingDao.getSightingsOfHero(Spiderman);
+
+        assertEquals(spidermanSightings, result);
     }
 
     /**
@@ -135,6 +386,82 @@ public class SightingDaoDBTest {
      */
     @Test
     public void testGetSightingsAtLocation() {
+        Superpower mindReading = new Superpower();
+        mindReading.setSuperpowerName("Flight");
+        mindReading = superpowerDao.addSuperpower(mindReading);
+        Hero Spiderman = new Hero();
+        Spiderman.setHeroName("Spiderman");
+        Spiderman.setHeroDescription("flies");
+        Spiderman.setSuperPower(mindReading);
+
+        Spiderman = heroDao.addHero(Spiderman);
+
+        BigDecimal latitude = new BigDecimal("32.515000");
+        BigDecimal longitude = new BigDecimal("75.255000");
+
+        Location thePost = new Location();
+        thePost.setLocationDescription("calm the mind");
+        thePost.setLocationAddress("454 The way");
+        thePost.setLocationCity("Queens");
+        thePost.setLocationState("NY");
+        thePost.setZipCode("11372");
+        thePost.setLocationName("The post");
+        thePost.setLatitude(latitude);
+        thePost.setLongitude(longitude);
+
+        thePost = locationDao.addLocation(thePost);
+
+        Sighting sightingOne = new Sighting();
+
+        LocalDate date = LocalDate.parse("2017-02-05");
+
+        sightingOne.setDate(date);
+        sightingOne.setHero(Spiderman);
+        sightingOne.setLocation(thePost);
+
+        sightingOne = sightingDao.addSighting(sightingOne);
+
+        Sighting sightingTwo = new Sighting();
+
+        LocalDate date2 = LocalDate.parse("2017-03-10");
+
+        sightingTwo.setDate(date2);
+        sightingTwo.setHero(Spiderman);
+        sightingTwo.setLocation(thePost);
+
+        sightingTwo = sightingDao.addSighting(sightingTwo);
+
+        BigDecimal latitude2 = new BigDecimal("17.555000");
+        BigDecimal longitude2 = new BigDecimal("96.555000");
+
+        Location GrandCentral = new Location();
+        GrandCentral.setLocationDescription("Not just for tacos");
+        GrandCentral.setLocationAddress("1234 taco way");
+        GrandCentral.setLocationCity("Manhattan");
+        GrandCentral.setLocationState("NY");
+        GrandCentral.setZipCode("11111");
+        GrandCentral.setLocationName("Taco Bell");
+        GrandCentral.setLatitude(latitude2);
+        GrandCentral.setLongitude(longitude2);
+
+        GrandCentral = locationDao.addLocation(GrandCentral);
+
+        Sighting sightingThree = new Sighting();
+
+        sightingThree.setDate(date2);
+        sightingThree.setHero(Spiderman);
+        sightingThree.setLocation(GrandCentral);
+
+        sightingThree = sightingDao.addSighting(sightingThree);
+
+        List<Sighting> sightingsAtThePost = new ArrayList<>();
+
+        sightingsAtThePost.add(sightingOne);
+        sightingsAtThePost.add(sightingTwo);
+
+        List<Sighting> result = sightingDao.getSightingsAtLocation(thePost);
+
+        assertEquals(sightingsAtThePost, result);
     }
 
     /**
@@ -142,6 +469,62 @@ public class SightingDaoDBTest {
      */
     @Test
     public void testGetSightingsFromDate() {
+        
+        Superpower mindReading = new Superpower();
+        mindReading.setSuperpowerName("Flight");
+        mindReading = superpowerDao.addSuperpower(mindReading);
+        Hero Spiderman = new Hero();
+        Spiderman.setHeroName("Spiderman");
+        Spiderman.setHeroDescription("flies");
+        Spiderman.setSuperPower(mindReading);
+
+        Spiderman = heroDao.addHero(Spiderman);
+
+        BigDecimal latitude = new BigDecimal("32.515000");
+        BigDecimal longitude = new BigDecimal("75.255000");
+
+        Location thePost = new Location();
+        thePost.setLocationDescription("calm the mind");
+        thePost.setLocationAddress("454 The way");
+        thePost.setLocationCity("Queens");
+        thePost.setLocationState("NY");
+        thePost.setZipCode("11372");
+        thePost.setLocationName("The post");
+        thePost.setLatitude(latitude);
+        thePost.setLongitude(longitude);
+
+        thePost = locationDao.addLocation(thePost);
+
+        Sighting sightingOne = new Sighting();
+
+        LocalDate date = LocalDate.parse("2017-02-05");
+
+        sightingOne.setDate(date);
+        sightingOne.setHero(Spiderman);
+        sightingOne.setLocation(thePost);
+
+        sightingOne = sightingDao.addSighting(sightingOne);
+
+        Sighting sightingTwo = new Sighting();
+
+        LocalDate date2 = LocalDate.parse("2017-03-10");
+
+        sightingTwo.setDate(date2);
+        sightingTwo.setHero(Spiderman);
+        sightingTwo.setLocation(thePost);
+
+        sightingTwo = sightingDao.addSighting(sightingTwo);
+        
+        
+
+        List<Sighting> sightings = new ArrayList<>();
+        sightings.add(sightingOne);
+        sightings.add(sightingTwo);
+
+       List <Sighting> result = sightingDao.getAllSightings();
+       
+        assertEquals(sightings, result);
+       
     }
-    
+
 }

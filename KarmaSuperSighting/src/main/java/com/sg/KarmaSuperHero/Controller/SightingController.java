@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.KarmaSuperHero.controller;
-
-/**
- *
- * @author Karma Dolkar <krmdlkr@gmail.com>
- */
-public class SightingController {
-    
-}
+//package com.sg.KarmaSuperHero.Controller;
+//
+//import org.springframework.stereotype.Controller;
+//
+///**
+// *
+// * @author Karma Dolkar <krmdlkr@gmail.com>
+// */
+//@Controller
+//public class SightingController {
+//    
+//}

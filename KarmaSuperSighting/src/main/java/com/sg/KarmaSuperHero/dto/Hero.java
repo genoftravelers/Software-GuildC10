@@ -16,7 +16,7 @@ public class Hero {
     private String heroName;
     private String heroDescription;
     private Superpower superPower;
-    private Organization needsOrganization;
+    private Organization organization;
 
     public int getHeroId() {
         return heroId;
@@ -50,12 +50,12 @@ public class Hero {
         this.superPower = superPower;
     }
 
-    public Organization getNeedsOrganization() {
-        return needsOrganization;
+    public Organization getOrganization() {
+        return organization;
     }
 
-    public void setNeedsOrganization(Organization needsOrganization) {
-        this.needsOrganization = needsOrganization;
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class Hero {
         hash = 37 * hash + Objects.hashCode(this.heroName);
         hash = 37 * hash + Objects.hashCode(this.heroDescription);
         hash = 37 * hash + Objects.hashCode(this.superPower);
-        hash = 37 * hash + Objects.hashCode(this.needsOrganization);
+        hash = 37 * hash + Objects.hashCode(this.organization);
         return hash;
     }
 
@@ -93,7 +93,7 @@ public class Hero {
         if (!Objects.equals(this.superPower, other.superPower)) {
             return false;
         }
-        if (!Objects.equals(this.needsOrganization, other.needsOrganization)) {
+        if (!Objects.equals(this.organization, other.organization)) {
             return false;
         }
         return true;
@@ -101,7 +101,7 @@ public class Hero {
 
     @Override
     public String toString() {
-        return "Hero{" + "heroId=" + heroId + ", heroName=" + heroName + ", heroDescription=" + heroDescription + ", superPower=" + superPower + ", needsOrganization=" + needsOrganization + '}';
+        return "Hero{" + "heroId=" + heroId + ", heroName=" + heroName + ", heroDescription=" + heroDescription + ", superPower=" + superPower + ", organization=" + organization + '}';
     }
 
     
