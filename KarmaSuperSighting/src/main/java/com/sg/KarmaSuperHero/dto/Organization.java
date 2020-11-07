@@ -16,7 +16,7 @@ public class Organization {
     private int organizationId;
     private Location location;
     private List <Hero> heroes;
-    private String orgnizationName;
+    private String organizationName;
     private String organizationDescription;
     private String organizationPhoneNum;
 
@@ -44,12 +44,12 @@ public class Organization {
         this.heroes = heroes;
     }
 
-    public String getOrgnizationName() {
-        return orgnizationName;
+    public String getOrganizationName() {
+        return organizationName;
     }
 
-    public void setOrgnizationName(String orgnizationName) {
-        this.orgnizationName = orgnizationName;
+    public void setOrganizationName(String organizationName) {
+        this.organizationName = organizationName;
     }
 
     public String getOrganizationDescription() {
@@ -74,7 +74,7 @@ public class Organization {
         hash = 37 * hash + this.organizationId;
         hash = 37 * hash + Objects.hashCode(this.location);
         hash = 37 * hash + Objects.hashCode(this.heroes);
-        hash = 37 * hash + Objects.hashCode(this.orgnizationName);
+        hash = 37 * hash + Objects.hashCode(this.organizationName);
         hash = 37 * hash + Objects.hashCode(this.organizationDescription);
         hash = 37 * hash + Objects.hashCode(this.organizationPhoneNum);
         return hash;
@@ -95,7 +95,7 @@ public class Organization {
         if (this.organizationId != other.organizationId) {
             return false;
         }
-        if (!Objects.equals(this.orgnizationName, other.orgnizationName)) {
+        if (!Objects.equals(this.organizationName, other.organizationName)) {
             return false;
         }
         if (!Objects.equals(this.organizationDescription, other.organizationDescription)) {
@@ -115,7 +115,7 @@ public class Organization {
 
     @Override
     public String toString() {
-        return "Organization{" + "organizationId=" + organizationId + ", location=" + location + ", heroes=" + heroes + ", orgnizationName=" + orgnizationName + ", organizationDescription=" + organizationDescription + ", organizationPhoneNum=" + organizationPhoneNum + '}';
+        return "Organization{" + "organizationId=" + organizationId + ", location=" + location + ", heroes=" + heroes + ", organizationName=" + organizationName + ", organizationDescription=" + organizationDescription + ", organizationPhoneNum=" + organizationPhoneNum + '}';
     }
 
   

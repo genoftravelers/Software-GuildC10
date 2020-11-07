@@ -66,7 +66,7 @@ public class OrganizationDaoDB implements OrganizationDao {
     public Organization addOrganization(Organization organization) {
         final String INSERT_ORGANIZATION = "INSERT INTO organization (name, description, phoneNum, locationId) " + "VALUES(?,?,?,?)";
         jdbc.update(INSERT_ORGANIZATION,
-                organization.getOrgnizationName(),
+                organization.getOrganizationName(),
                 organization.getOrganizationDescription(),
                 organization.getOrganizationPhoneNum(),
                 organization.getLocation().getLocationId());
@@ -83,7 +83,7 @@ public class OrganizationDaoDB implements OrganizationDao {
     public void updateOrganization(Organization organization) {
         final String UPDATE_ORGANIZATION = "UPDATE organization SET name = ?, description=?, phoneNum=?, locationId=? WHERE organizationId=? ";
         jdbc.update(UPDATE_ORGANIZATION,
-                organization.getOrgnizationName(),
+                organization.getOrganizationName(),
                 organization.getOrganizationDescription(),
                 organization.getOrganizationPhoneNum(),
                 organization.getLocation().getLocationId(),
@@ -147,7 +147,7 @@ public class OrganizationDaoDB implements OrganizationDao {
         public Organization mapRow(ResultSet rs, int index) throws SQLException {
             Organization organization = new Organization();
             organization.setOrganizationId(rs.getInt("organizationId"));
-            organization.setOrgnizationName(rs.getString("name"));
+            organization.setOrganizationName(rs.getString("name"));
             organization.setOrganizationDescription(rs.getString("description"));
             organization.setOrganizationPhoneNum(rs.getString("phoneNum"));
 

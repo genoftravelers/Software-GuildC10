@@ -57,7 +57,8 @@
                             <td th:text="${organization.organizationName}">Organization Name</td>
                             <td th:text="${organization.organizationDescription}">Organization Description</td>
                             <td th:text="${organization.organizationPhoneNum}">Organization phone</td>
-                            <td>details</td>
+                            <td><a href="#" th:href="@{/organizationDetail(id=${organization.organizationId})}">Details</a>
+</td>
 
 
                             <td><a href="#" th:href="@{/editOrganization(id=${organization.organizationId})}">Edit</a></td>

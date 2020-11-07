@@ -116,7 +116,7 @@ public class OrganizationDaoDBTest {
 
         Organization zenPower = new Organization();
 
-        zenPower.setOrgnizationName("Zen");
+        zenPower.setOrganizationName("Zen");
         zenPower.setOrganizationDescription("Hidden under the Dessert");
         zenPower.setOrganizationPhoneNum("9292459121");
         zenPower.setLocation(FlatIron);
@@ -151,7 +151,7 @@ public class OrganizationDaoDBTest {
 
         Organization TheUnion = new Organization();
 
-        TheUnion.setOrgnizationName("Name Organization");
+        TheUnion.setOrganizationName("Name Organization");
         TheUnion.setOrganizationDescription("Hidden under the  dessert");
         TheUnion.setOrganizationPhoneNum("9292459121");
         TheUnion.setLocation(GrandCentralTerminal);
@@ -176,7 +176,7 @@ public class OrganizationDaoDBTest {
 
         Organization TheUnion2 = new Organization();
 
-        TheUnion2.setOrgnizationName("The gang");
+        TheUnion2.setOrganizationName("The gang");
         TheUnion2.setOrganizationDescription("Looks like a good gang");
         TheUnion2.setOrganizationPhoneNum("9292459121");
         TheUnion2.setLocation(mcDonalds);
@@ -213,7 +213,7 @@ public class OrganizationDaoDBTest {
 
         Organization theUnion = new Organization();
 
-        theUnion.setOrgnizationName("Name Organization");
+        theUnion.setOrganizationName("Name Organization");
         theUnion.setOrganizationDescription("Hidden under the  dessert");
         theUnion.setOrganizationPhoneNum("9292459121");
         theUnion.setLocation(GrandCentralTerminal);
@@ -256,7 +256,7 @@ public class OrganizationDaoDBTest {
 
         Organization theUnion = new Organization();
 
-        theUnion.setOrgnizationName("Name Organization");
+        theUnion.setOrganizationName("Name Organization");
         theUnion.setOrganizationDescription("Hidden under the  dessert");
         theUnion.setOrganizationPhoneNum("9292459121");
         theUnion.setLocation(GrandCentralTerminal);
