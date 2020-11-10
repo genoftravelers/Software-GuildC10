@@ -78,6 +78,7 @@ public class SuperpowerController {
 
     @PostMapping("editSuperpower")
     public String performEditSuperpower(@Valid Superpower superpower, BindingResult result) {
+        
         if (result.hasErrors()) {
             return "editSuperpower";
         }

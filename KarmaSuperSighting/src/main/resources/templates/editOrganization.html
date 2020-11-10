@@ -19,24 +19,31 @@
         <div class="container">
             <div class="row m-4">
                 <div class="col text-center border border-dark">
-                    <h1>Organization Detail</h1>
+                    <h1>Hero Sightings</h1>
                 </div>
             </div>
-        </div>
-        <div id="buttonNavBar" class="text-center">	
-            <a  th:href="@{index}" class="btn btn-outline-primary btn-lg"><h3>Home</h3></a>
+            <div class="row m-4 border border-dark">
+                <div class="col text-center m-3">
+                    <a href="index" class="btn btn-outline-primary btn-lg">Home</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="hero" class="btn btn-outline-primary btn-lg">Hero</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="location" class="btn btn-outline-primary btn-lg">Location</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="organization" class="btn btn-outline-primary btn-lg">Organization</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="sighting" class="btn btn-outline-primary btn-lg">Sighting</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="superpowers" class="btn btn-outline-primary btn-lg">Super Power</a>
+                </div>
 
-            <a th:href="@{heroes}" class="btn btn-outline-primary btn-lg"><h3>Heroes</h3></a>	
-            <a th:href="@{organizations}" class="btn btn-outline-primary btn-lg"><h3>Organizations</h3></a>	
-
-            <a th:href="@{sightings}" class="btn btn-outline-primary btn-lg "><h3>Sightings</h3></a>	
-
-
-            <a th:href="@{organizations}" class="btn btn-outline-primary btn-lg active"><h3>Locations</h3></a>	
-
-
-            <a th:href="@{superpowers}" class="btn btn-outline-primary btn-lg"><h3>Superpowers</h3></a>	
-        </div>	
+            </div>
+        </div>  
 
         <div class="container">
 
@@ -85,7 +92,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="heroes" class="col-3 col-form-label">Heroes</label>
+                            <label for="hero" class="col-3 col-form-label">Heroes</label>
                             <div class="col-9">
                                 <select multiple id="heroes" name="heroId" 
                                         class="form-control">

@@ -89,6 +89,9 @@ public class OrganizationDaoDB implements OrganizationDao {
                 organization.getLocation().getLocationId(),
                 organization.getOrganizationId());
 
+        final String DELETE_HERO_ORGANIZATION = "DELETE FROM HeroOrganization WHERE organizationId = ?";
+        jdbc.update(DELETE_HERO_ORGANIZATION, organization.getOrganizationId());
+        insertOrganizationHero(organization);
     }
 
     @Override
@@ -118,8 +121,8 @@ public class OrganizationDaoDB implements OrganizationDao {
             hero.setSuperPower(thisPower);
 
         }
-        
-        if(heros.isEmpty()){
+
+        if (heros.isEmpty()) {
             heros = null;
         }
 

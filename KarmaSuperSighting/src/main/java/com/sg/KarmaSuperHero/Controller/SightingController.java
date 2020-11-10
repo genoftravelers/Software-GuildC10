@@ -12,7 +12,6 @@ import com.sg.KarmaSuperHero.dto.Hero;
 import com.sg.KarmaSuperHero.dto.Location;
 import com.sg.KarmaSuperHero.dto.Sighting;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -25,12 +24,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
 @Controller
+
 public class SightingController {
 
     @Autowired
@@ -43,6 +44,19 @@ public class SightingController {
     HeroDao heroDao;
 
     Set<ConstraintViolation<Sighting>> violations = new HashSet<>();
+//request mappign takes in multiple pm and its a bigger/broader version of getMapping.
+
+    @RequestMapping(value = {"/", "index"})//gets only 10 sightings
+    public String loadIndex(Model model) {
+        List<Sighting> sightings = sightingDao.getTopTenSightings();
+        List<Hero> heroes = heroDao.getAllHeroes();
+        List<Location> locations = locationDao.getAllLocations();
+        model.addAttribute("sightings", sightings);
+        model.addAttribute("heroes", heroes);
+        model.addAttribute("locations", locations);
+        return "index";
+    }
+
     @GetMapping("sightings")
     public String displaySightings(Model model) {
         List<Sighting> sightings = sightingDao.getAllSightings();
@@ -75,7 +89,7 @@ public class SightingController {
         Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
         violations = validate.validate(sighting);
         if (violations.isEmpty()) {
-        sightingDao.addSighting(sighting);
+            sightingDao.addSighting(sighting);
         }
         return "redirect:/sightings";
     }
@@ -87,17 +101,6 @@ public class SightingController {
         return "sightingDetail";
     }
 
-    @GetMapping("index")//gets only 10 sightings
-    public String loadIndex(Model model) {
-        List<Sighting> sightings = sightingDao.getTopTenSightings();
-        List<Hero> heroes = heroDao.getAllHeroes();
-        List<Location> locations = locationDao.getAllLocations();
-        model.addAttribute("sightings", sightings);
-        model.addAttribute("heroes", heroes);
-        model.addAttribute("locations", locations);
-        return "index";
-    }
-  
     @GetMapping("deleteSighting")
     public String deleteSighting(HttpServletRequest request) {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -117,14 +120,10 @@ public class SightingController {
     }
 
     @PostMapping("editSighting")
-    public String performEditSighting(Sighting sighting, HttpServletRequest request) {
+    public String performEditSighting(HttpServletRequest request) {
 
-        String HeroId = request.getParameter("heroId");
+        String heroId = request.getParameter("heroId");
         String locationId = request.getParameter("locationId");
-
-        sighting.setLocation(locationDao.getLocationById(Integer.parseInt(locationId)));
-
-        sighting.setHero(heroDao.getHeroById(Integer.parseInt(HeroId)));
 
         LocalDate date;
         try {
@@ -134,26 +133,22 @@ public class SightingController {
         } catch (Exception e) {
             date = null;
         }
+
+        int sightingId = Integer.parseInt(request.getParameter("sightingId"));
+        Sighting sighting = new Sighting();
+
+        sighting.setHero(heroDao.getHeroById(Integer.parseInt(heroId)));
+        sighting.setLocation(locationDao.getLocationById(Integer.parseInt(locationId)));
+        sighting.setSightingId(sightingId);
+
         sighting.setDate(date);
 
         sightingDao.updateSighting(sighting);
-        int heroID = Integer.parseInt(request.getParameter("heroIdEdit"));
-        int locationID = Integer.parseInt(request.getParameter("locationIdEdit"));
-        int sightingID = Integer.parseInt(request.getParameter("sightingIdEdit"));
-//        Sighting sighting = new Sighting();
-        sighting.setLocation(locationDao.getLocationById(locationID));
-        sighting.setDate(date);
-        sighting.setHero(heroDao.getHeroById(heroID));
-        sighting.setSightingId(sightingID);
-        Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
-//        violations = validate.validate(sighting);
-//        if (violations.isEmpty()) {
-            sightingDao.updateSighting(sighting);
-//        }
+
         return "redirect:/sightings";
     }
 
-    @GetMapping("topTenSightings") //Can be changed
+    @GetMapping("topTenSightings")
     public String displayTopTenSightings(Model model) {
         List<Sighting> topTenSightings = sightingDao.getTopTenSightings();
         model.addAttribute("topTenSightings", topTenSightings);
