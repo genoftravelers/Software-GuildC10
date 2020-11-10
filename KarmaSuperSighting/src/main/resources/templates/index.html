@@ -11,16 +11,16 @@
         <title>Home</title>
     </head>
     <style>
-       
+
         .sighting{
             display: grid;
-          
-             text-align: center;
+
+            text-align: center;
             grid-template-columns: repeat(5, 1fr);
         } 
-        
+
     </style>
-    
+
     <body>
         <!--Main Body of Page--> 
         <div class="container">
@@ -51,7 +51,6 @@
 
             </div>
         </div>  
-        <br>
         <!-- TOP -->
         <div class="container">
             <p >
@@ -64,13 +63,29 @@
 
             </p>
             <hr>
-            
+
             <div >
                 <h3 class="text-center">TOP 10 SIGHTINGS</h3>
                 <hr>
-                <br><br>
+            </div>
+
+            <div class="container">
+                <img src="https://media.giphy.com/media/H7xeeh0LJ6rHf5uj5w/giphy.gif" id="gif" height="250"
+                     width="350">
+                <img src="https://media.giphy.com/media/xTiTnIByhw6hCJi58Y/giphy.gif" id="gif" height="250"
+                     width="350">
+                <img src="https://media.giphy.com/media/iH1DHUQcc17yubngP4/giphy.gif" id="gif" height="250"
+                     width="350">
+                <img src="https://media.giphy.com/media/vgSJqTTWV7tC0/giphy.gif" id="gif" height="250"
+                     width="350">
+                <img src="https://media.giphy.com/media/WpyWwVuPXWv0Q8zRRI/giphy.gif" id="gif" height="250"
+                     width="350">
+                <img src="https://media.giphy.com/media/hpKvcXoD5tBoNUW6mA/giphy.gif" id="gif" height="250"
+                     width="350">
 
             </div>
+            
+            <br> <br>
 
             <div class= "sighting" >
                 <div th:each="sighting : ${sightings}" >
@@ -85,25 +100,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <br><br>
 
 
-            <div class="container">
-                <img src="https://media.giphy.com/media/H7xeeh0LJ6rHf5uj5w/giphy.gif" id="gif" height="250"
-                     width="350">
-                <img src="https://media.giphy.com/media/xTiTnIByhw6hCJi58Y/giphy.gif" id="gif" height="250"
-                     width="350">
-                <img src="https://media.giphy.com/media/iH1DHUQcc17yubngP4/giphy.gif" id="gif" height="250"
-                     width="350">
-                 <img src="https://media.giphy.com/media/vgSJqTTWV7tC0/giphy.gif" id="gif" height="250"
-                     width="350">
-                 <img src="https://media.giphy.com/media/WpyWwVuPXWv0Q8zRRI/giphy.gif" id="gif" height="250"
-                     width="350">
-                <img src="https://media.giphy.com/media/hpKvcXoD5tBoNUW6mA/giphy.gif" id="gif" height="250"
-                     width="350">
 
-            </div>
         </div>
         <br>
         <br>
