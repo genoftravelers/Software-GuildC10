@@ -15,8 +15,8 @@ import java.util.List;
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
 public interface HeroDao {
-    
-     Hero getHeroById(int id);
+
+    Hero getHeroById(int id);
 
     List<Hero> getAllHeroes();
 
@@ -28,9 +28,6 @@ public interface HeroDao {
 
     List<Hero> getHeroesBySuperpower(Superpower superPower);
 
-    public void insertHeroOrganization(Hero hero, List<Integer> organizationIds);
-
     public List<Hero> getHeroesByOrganization(Organization organization);
 
-    
 }

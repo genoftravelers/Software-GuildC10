@@ -15,9 +15,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.AfterClass;
-import org.junit.Before;
+
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +59,7 @@ public class SightingDaoDBTest {
     public static void tearDownClass() {
     }
 
-    @Before
+    @BeforeEach
     public void setUp() {
 
         List<Sighting> sightings = sightingDao.getAllSightings();

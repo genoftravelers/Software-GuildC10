@@ -7,6 +7,12 @@ package com.sg.KarmaSuperHero.dto;
 
 import java.math.BigDecimal;
 import java.util.Objects;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -15,13 +21,39 @@ import java.util.Objects;
 public class Location {
 
     private int locationId;
+
+    @NotBlank(message = "Name must not be blank")
+    @Size(max = 45, message = "Name must be fewer than 45 characters")
     private String locationName;
+
+    @NotBlank(message = "Description must not be blank")
+    @Size(max = 250, message = "Description must be fewer than 250 characters")
     private String locationDescription;
+
+    @NotBlank(message = "Address must not be blank")
+    @Size(max = 45, message = "Address must be fewer than 45 characters")
     private String locationAddress;
+
+    @NotBlank(message = "City must not be blank")
+    @Size(max = 45, message = "City must be fewer than 45 characters")
     private String locationCity;
+
+    @Size(max = 2, message = "State must be 2 characters")
     private String locationState;
+
+    @Size(min = 5, max = 5, message = "Zip Code must be 5 characters")
     private String zipCode;
+
+    @DecimalMax(value = "90.0", inclusive = true, message = "Latitude must be between -90 and 90")
+    @DecimalMin(value = "-90.0", inclusive = true, message = "Latitude must be between -90 and 90")
+    @Digits(integer = 3, fraction = 6, message = "Latitude must only have 6 numbers max after the decimal")
+    @NotNull(message = "Please Input a valid Latitude")
     private BigDecimal latitude;
+
+    @DecimalMax(value = "180.0", inclusive = true, message = "Longitude must be between -180 and 180")
+    @DecimalMin(value = "-180.0", inclusive = true, message = "Longitude must be between -180 and 180")
+    @Digits(integer = 3, fraction = 6, message = "Longitude must only have 6 numbers max after the decimal")
+    @NotNull(message = "Please Input a valid Longitude")
     private BigDecimal longitude;
 
     public int getLocationId() {

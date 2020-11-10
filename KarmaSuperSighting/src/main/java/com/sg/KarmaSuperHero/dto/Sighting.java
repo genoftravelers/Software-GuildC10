@@ -7,16 +7,27 @@ package com.sg.KarmaSuperHero.dto;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 /**
  *
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
 public class Sighting {
+
     private int SightingId;
+
+    @Past(message = "Date must not be in the future")
+    @NotNull(message = "You must select a date")
     private LocalDate date;
+
+    @NotNull(message = "You must select a hero")
     private Hero hero;
+
+    @NotNull(message = "You must select a location")
     private Location location;
+    
     private String dateAsString;
 
     public int getSightingId() {
@@ -105,7 +116,4 @@ public class Sighting {
         return "Sighting{" + "SightingId=" + SightingId + ", date=" + date + ", hero=" + hero + ", location=" + location + ", dateAsString=" + dateAsString + '}';
     }
 
-    
-    
-    
 }

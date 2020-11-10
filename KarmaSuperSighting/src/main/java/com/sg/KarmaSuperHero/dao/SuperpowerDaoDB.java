@@ -5,6 +5,8 @@
  */
 package com.sg.KarmaSuperHero.dao;
 
+import com.sg.KarmaSuperHero.dao.HeroDaoDB.HeroMapper;
+import com.sg.KarmaSuperHero.dto.Hero;
 import com.sg.KarmaSuperHero.dto.Superpower;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,7 +49,7 @@ public class SuperpowerDaoDB implements SuperpowerDao {
     public Superpower addSuperpower(Superpower superpower) {
         final String INSERT_SUPERPOWER = "INSERT INTO superpower(name)" + "VALUES(?)";
         jdbc.update(INSERT_SUPERPOWER, superpower.getSuperpowerName());
-        
+
         int newId = jdbc.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
         superpower.setSuperpowerId(newId);
         return superpower;
@@ -61,9 +63,25 @@ public class SuperpowerDaoDB implements SuperpowerDao {
 
     @Override
     public void deleteSuperpowerById(int id) {
+
+        final String GET_ALL_HERO_BY_SUPERPOWER = "SELECT * FROM Hero WHERE superpowerId =?";
+
+        List<Hero> heroes = jdbc.query(GET_ALL_HERO_BY_SUPERPOWER, new HeroMapper(), id);
+
+        for (Hero hero : heroes) {
+            final String DELETE_HEROES_FROM_ORGANIZATION = "DELETE FROM HeroOrganization WHERE heroId = ?";
+            jdbc.update(DELETE_HEROES_FROM_ORGANIZATION, hero.getHeroId());
+
+            final String DELETE_HEROES_FROM_SIGHTING = "DELETE FROM Sighting WHERE heroId = ?";
+            jdbc.update(DELETE_HEROES_FROM_SIGHTING, hero.getHeroId());
+            
+            final String DELETE_HEROES = "DELETE FROM Hero WHERE heroId = ?";
+            jdbc.update(DELETE_HEROES, hero.getHeroId());
+        }
+
         final String DELETE_SUPERPOWER = "DELETE FROM superpower WHERE superpowerId = ?";
         jdbc.update(DELETE_SUPERPOWER, id);
-        
+
     }
 
     public static final class SuperpowerMapper implements RowMapper<Superpower> {
@@ -73,7 +91,6 @@ public class SuperpowerDaoDB implements SuperpowerDao {
             Superpower superpower = new Superpower();
             superpower.setSuperpowerId(rs.getInt("superpowerId"));
             superpower.setSuperpowerName(rs.getString("name"));
-            
 
             return superpower;
         }

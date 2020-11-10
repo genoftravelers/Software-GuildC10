@@ -5,18 +5,32 @@
  */
 package com.sg.KarmaSuperHero.dto;
 
+import java.util.List;
 import java.util.Objects;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 /**
  *
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
 public class Hero {
+
     private int heroId;
+
+    @NotBlank(message = "Name must not be blank")
+    @Size(max = 45, message = "Name must be fewer than 45 characters")
     private String heroName;
+
+    @NotEmpty(message = "Description must not be empty")
+    @Size(max = 250, message = "Description must be fewer than 250 characters")
     private String heroDescription;
+
     private Superpower superPower;
-    private Organization organization;
+
+    @NotEmpty(message = "Organizations must not be empty")
+    private List<Organization> organizations;
 
     public int getHeroId() {
         return heroId;
@@ -50,22 +64,22 @@ public class Hero {
         this.superPower = superPower;
     }
 
-    public Organization getOrganization() {
-        return organization;
+    public List<Organization> getOrganizations() {
+        return organizations;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setOrganizations(List<Organization> organizations) {
+        this.organizations = organizations;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 37 * hash + this.heroId;
-        hash = 37 * hash + Objects.hashCode(this.heroName);
-        hash = 37 * hash + Objects.hashCode(this.heroDescription);
-        hash = 37 * hash + Objects.hashCode(this.superPower);
-        hash = 37 * hash + Objects.hashCode(this.organization);
+        hash = 31 * hash + this.heroId;
+        hash = 31 * hash + Objects.hashCode(this.heroName);
+        hash = 31 * hash + Objects.hashCode(this.heroDescription);
+        hash = 31 * hash + Objects.hashCode(this.superPower);
+        hash = 31 * hash + Objects.hashCode(this.organizations);
         return hash;
     }
 
@@ -93,7 +107,7 @@ public class Hero {
         if (!Objects.equals(this.superPower, other.superPower)) {
             return false;
         }
-        if (!Objects.equals(this.organization, other.organization)) {
+        if (!Objects.equals(this.organizations, other.organizations)) {
             return false;
         }
         return true;
@@ -101,9 +115,7 @@ public class Hero {
 
     @Override
     public String toString() {
-        return "Hero{" + "heroId=" + heroId + ", heroName=" + heroName + ", heroDescription=" + heroDescription + ", superPower=" + superPower + ", organization=" + organization + '}';
+        return "Hero{" + "heroId=" + heroId + ", heroName=" + heroName + ", heroDescription=" + heroDescription + ", superPower=" + superPower + ", organizations=" + organizations + '}';
     }
 
-    
-    
 }

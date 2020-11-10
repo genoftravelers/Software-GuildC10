@@ -17,8 +17,8 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.runner.RunWith;
@@ -60,7 +60,7 @@ public class OrganizationDaoDBTest {
     public static void tearDownClass() {
     }
 
-    @Before
+    @BeforeEach
     public void setUp() {
 
         List<Superpower> superpowers = superpowerDao.getAllSuperpowers();

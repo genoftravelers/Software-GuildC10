@@ -7,11 +7,18 @@ package com.sg.KarmaSuperHero.Controller;
 
 import com.sg.KarmaSuperHero.dao.SuperpowerDao;
 import com.sg.KarmaSuperHero.dto.Superpower;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolation;
+import javax.validation.Valid;
+import javax.validation.Validation;
+import javax.validation.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -25,10 +32,13 @@ public class SuperpowerController {
     @Autowired
     SuperpowerDao superpowerDao;
 
+    Set<ConstraintViolation<Superpower>> violations = new HashSet<>();
+
     @GetMapping("superpowers")
     public String displaySuperpowers(Model model) {
         List<Superpower> superpowers = superpowerDao.getAllSuperpowers();
         model.addAttribute("superpowers", superpowers);
+        model.addAttribute("errors", violations);
         return "superpowers";
     }
 
@@ -38,7 +48,12 @@ public class SuperpowerController {
         Superpower superpower = new Superpower();
         superpower.setSuperpowerName(powerName);
 
-        superpowerDao.addSuperpower(superpower);
+//        superpowerDao.addSuperpower(superpower);
+        Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
+        violations = validate.validate(superpower);
+        if (violations.isEmpty()) {
+            superpowerDao.addSuperpower(superpower);
+        }
 
         return "redirect:/superpowers";
     }
@@ -50,29 +65,25 @@ public class SuperpowerController {
 
         return "redirect:/superpowers";
     }
-    
+
     @GetMapping("editSuperpower")
-    public String editSuperpower (HttpServletRequest request, Model model) {
+    public String editSuperpower(HttpServletRequest request, Model model) {
         int id = Integer.parseInt(request.getParameter("id"));
         Superpower superpower = superpowerDao.getSuperpowerById(id);
-       
-        
+
         model.addAttribute("superpower", superpower);
         return "editSuperpower";
-        
-        
+
     }
 
     @PostMapping("editSuperpower")
-    public String performEditSuperpower(HttpServletRequest request, Model model) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Superpower superpower = superpowerDao.getSuperpowerById(id);
-        
-        superpower.setSuperpowerName(request.getParameter("superpowerName"));
+    public String performEditSuperpower(@Valid Superpower superpower, BindingResult result) {
+        if (result.hasErrors()) {
+            return "editSuperpower";
+        }
+
         superpowerDao.updateSuperpower(superpower);
-        
         return "redirect:/superpowers";
-                
-        
+
     }
 }

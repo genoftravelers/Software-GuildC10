@@ -2,16 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
     <head>
-        <!-- Required meta tags -->
+        <!--Required meta tags--> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
+        <!--Bootstrap CSS--> 
         <link th:href="@{/css/home.css}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <title>Organization</title>
+        <title>Sightings</title>
     </head>
 
     <body>
@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row m-4">
                 <div class="col text-center border border-dark">
-                    <h1>Organization</h1>
+                    <h1>Sightings</h1>
                 </div>
             </div>
             <div class="row m-4 border border-dark">
@@ -33,48 +33,45 @@
                     <a href="locations" class="btn btn-outline-primary btn-lg">Location</a>
                 </div>
                 <div class="col text-center m-3">
-                    <a href="organizations" class="btn btn-outline-primary btn-lg active">Organization</a>
+                    <a href="organizations" class="btn btn-outline-primary btn-lg">Organization</a>
                 </div>
                 <div class="col text-center m-3">
-                    <a href="sightings" class="btn btn-outline-primary btn-lg">Sighting</a>
+                    <a href="sightings" class="btn btn-outline-primary btn-lg active">Sighting</a>
                 </div>
                 <div class="col text-center m-3">
                     <a href="superpowers" class="btn btn-outline-primary btn-lg">Super Power</a>
                 </div>
 
             </div>
-        </div>  	
+        </div>  
+
         <div class="row m-4 border border-dark">
             <div class="col text-center m-3">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Organization Name</th>
-                            <th>Organization Description</th>
-                            <th>Organization phone</th>
+                            <th>ID</th>
+                            <th>Date</th>
                             <th>Details</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="organization : ${organizations}">
-                            <td th:text="${organization.organizationId}">Organization Id</td>
-                            <td th:text="${organization.organizationName}">Organization Name</td>
-                            <td th:text="${organization.organizationDescription}">Organization Description</td>
-                            <td th:text="${organization.organizationPhoneNum}">Organization phone</td>
-                            <td><a href="#" th:href="@{/organizationDetail(id=${organization.organizationId})}">Details</a>
-                            </td>
+                        <tr th:each="sighting : ${sightings}">
+                            <td th:text="${sighting.SightingId}">Sighting ID</td>
+                            <td th:text='${sighting.date}'> Date</td>
+                            <td><a href="#" th:href="@{/sightingDetail(id=${sighting.SightingId})}">Details</a></td>
 
-
-                            <td><a href="#" th:href="@{/editOrganization(id=${organization.organizationId})}">Edit</a></td>
-                            <td><a href="#" th:href="@{/deleteOrganization(id=${organization.organizationId})}">Delete</a></td>
+                            <td><a href="#" th:href="@{/editSighting(id=${sighting.SightingId})}">Edit</a></td>
+                            <td><a href="#" th:href="@{/deleteSighting(id=${sighting.SightingId})}">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
+
 
         <div class="row m-4 border border-dark">
             <div class="col-12 m-1 text-center" 
@@ -83,32 +80,29 @@
                    th:text="${error.message}">Error message</p>
             </div>
             <div class="col-3 text-center m-3">
-                <span class="h3">Add Organization</span>
+                <span class="h3">Add Sighting</span>
             </div>
             <div class="col-7 text-center m-3">
-                <form action="addOrganization" method="POST">
+                <form action="addSighting" method="POST">
                     <div class="form-group row">
-                        <label for="organizationName" class="col-3 col-form-label">
-                            Organization Name</label>
+                        <label for="date" class="col-3 col-form-label">
+                            Date</label>
                         <div class="col-9">
-                            <input type="text" name="organizationName" 
-                                   id="organizationName" class="form-control"/>
+                            <input type="date" name="date" 
+                                   id="date" class="form-control"/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="organizationDescription" class="col-3 col-form-label">
-                            Organization Description</label>
+                        <label for="heroes" class="col-3 col-form-label">
+                            Heroes</label>
                         <div class="col-9">
-                            <input type="text" name="organizationDescription" 
-                                   id="organizationDescription" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="organizationPhoneNum" class="col-3 col-form-label">
-                            Organization phone</label>
-                        <div class="col-9">
-                            <input type="text" name="organizationPhoneNum" 
-                                   id="organizationPhoneNum" class="form-control"/>
+                            <select id="heroes" name="heroId" 
+                                    class="form-control" >
+                                <option th:each="hero : ${heroes}" 
+                                        th:value="${hero.heroId}" 
+                                        th:text="${hero.heroName}">
+                                    Hero Name</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -123,23 +117,11 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="heroes" class="col-3 col-form-label">
-                            Heroes</label>
-                        <div class="col-9">
-                            <select multiple id="heroes" name="heroId" 
-                                    class="form-control" >
-                                <option th:each="hero : ${heroes}" 
-                                        th:value="${hero.heroId}" 
-                                        th:text="${hero.heroName}">
-                                    Hero Name</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Add Organization</button>
+                    <button type="submit" class="btn btn-primary">Add Sighting</button>
                 </form>
             </div>
         </div>
+
 
 
 

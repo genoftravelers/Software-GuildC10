@@ -5,19 +5,15 @@
  */
 package com.sg.KarmaSuperHero.dao;
 
-import com.sg.KarmaSuperHero.dto.Hero;
-import com.sg.KarmaSuperHero.dto.Location;
-import com.sg.KarmaSuperHero.dto.Organization;
-import com.sg.KarmaSuperHero.dto.Sighting;
 import com.sg.KarmaSuperHero.dto.Superpower;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -54,7 +50,7 @@ public class SuperpowerDaoDBTest {
     public static void tearDownClass() {
     }
 
-    @Before
+    @BeforeEach
     public void setUp() {
         List<Superpower> superpowers = superpowerDao.getAllSuperpowers();
         for (Superpower superpower : superpowers) {

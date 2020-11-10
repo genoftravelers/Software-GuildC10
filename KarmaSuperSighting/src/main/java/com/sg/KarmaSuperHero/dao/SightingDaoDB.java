@@ -31,6 +31,7 @@ public class SightingDaoDB implements SightingDao {
 
     @Autowired
     JdbcTemplate jdbc;
+    
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-YYYY");
 
     @Override
@@ -38,7 +39,7 @@ public class SightingDaoDB implements SightingDao {
         try {
             final String GET_SIGHTING_BY_ID = "SELECT * FROM Sighting WHERE sightingId = ?";
             Sighting sighting = jdbc.queryForObject(GET_SIGHTING_BY_ID, new SightingMapper(), id);
-            //helper mothods
+            //helper methods
             sighting.setHero(getHeroForSighting(sighting.getSightingId()));
 
             sighting.setLocation(getLocationForSighting(sighting.getSightingId()));
@@ -89,6 +90,8 @@ public class SightingDaoDB implements SightingDao {
                 sighting.getLocation().getLocationId(),
                 sighting.getDate(),
                 sighting.getSightingId());
+
+        sighting.setDateAsString(formatter.format(sighting.getDate()));
 
     }
 
@@ -159,6 +162,20 @@ public class SightingDaoDB implements SightingDao {
         return thisLocation;
         //Mapper
 
+    }
+
+    @Override
+    public List<Sighting> getTopTenSightings() {
+        final String GET_TOP_TEN_SIGHTINGS
+                = " SELECT * FROM Sighting"
+                + " ORDER BY Date DESC"
+                + " LIMIT 10;";
+        List<Sighting> topTenSightings = jdbc.query(GET_TOP_TEN_SIGHTINGS, new SightingMapper());
+        for (Sighting sighting : topTenSightings) {
+            sighting.setHero(getHeroForSighting(sighting.getSightingId()));
+            sighting.setLocation(getLocationForSighting(sighting.getSightingId()));
+        }
+        return topTenSightings;
     }
 
     public static final class SightingMapper implements RowMapper<Sighting> {

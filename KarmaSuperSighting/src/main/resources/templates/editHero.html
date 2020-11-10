@@ -12,7 +12,6 @@
     </head>
     <body>
         <!--Main Body of Page--> 
-        <!--Main Body of Page--> 
         <div class="container">
             <div class="row m-4">
                 <div class="col text-center border border-dark">
@@ -46,77 +45,57 @@
             
             <div class="row m-4 border border-dark">
                 <div class="col-3 text-center m-3">
-                    <span class="h3">Edit Location</span>
+                    <span class="h3">Edit Hero</span>
                 </div>
                 <div class="col-7 text-center m-3">
-                    <form action="editLocation" method="POST">
+                    <form action="editHero" method="POST">
                         <div class="form-group row">
-                            <label for="locationName" class="col-3 col-form-label">
-                                Location Name</label>
+                            <label for="heroName" class="col-3 col-form-label">
+                                Hero Name</label>
                             <div class="col-9">
-                                <input type="text" name="locationName" id="locationName" 
-                                       class="form-control" th:value="${location.locationName}"/>
+                                <input type="text" name="heroName" id="heroName" 
+                                       class="form-control" th:value="${hero.heroName}"/>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="locationDescription" class="col-3 col-form-label">
-                                Location Description</label>
+                            <label for="heroDescription" class="col-3 col-form-label">
+                                Hero Description</label>
                             <div class="col-9">
-                                <input type="text" name="locationDescription" id="locationDescription" 
-                                       class="form-control"  th:value="${location.locationDescription}"/>
+                                <input type="text" name="heroDescription" id="heroDescription" 
+                                       class="form-control"  th:value="${hero.heroDescription}"/>
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <label for="superpower" class="col-3 col-form-label">Superpower</label>
+                            <div class="col-9">
+                                <select id="superpower" name="superpowerId" class="form-control" >
+                                    <option th:each="superpower : ${superpowers}" 
+                                            th:value="${superpower.superpowerId}" 
+                                            th:text="${superpower.superpowerName}"
+                                            th:selected="${hero.superPower.superpowerId == superpower.superpowerId}">
+                                        Superpower Name</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="locationAddress" class="col-3 col-form-label">
-                                Location Address</label>
+                            <label for="organization" class="col-3 col-form-label">Organization</label>
                             <div class="col-9">
-                                <input type="text" name="locationAddress" id="locationAddress" 
-                                       class="form-control" th:value="${location.locationAddress}">
+                                <select multiple id="organizations" name="organizationId" 
+                                        class="form-control">
+                                    <option th:each="organization : ${organizations}" 
+                                            th:value="${organization.organizationId}" 
+                                            th:text="${organization.organizationName + ' ' 
+                                            + organization.organizationDescription + ' ' 
+                                            + organization.organizationPhoneNum}"
+                                            th:selected="${hero.organizations.contains(organization)}">
+                                        Organization Name</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="locationCity" class="col-3 col-form-label">
-                                Location City</label>
-                            <div class="col-9">
-                                <input type="text" name="locationCity" id="locationCity" 
-                                       class="form-control" th:value="${location.locationCity}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="locationState" class="col-3 col-form-label">
-                                Location State</label>
-                            <div class="col-9">
-                                <input type="text" name="locationState" id="locationState" 
-                                       class="form-control" th:value="${location.locationState}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="zipCode" class="col-3 col-form-label">
-                                Zip code</label>
-                            <div class="col-9">
-                                <input type="text" name="zipCode" id="zipCode" 
-                                       class="form-control" th:value="${location.zipCode}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="latitude" class="col-3 col-form-label">
-                                Latitude</label>
-                            <div class="col-9">
-                                <input type="text" name="latitude" id="latitude" 
-                                       class="form-control" th:value="${location.latitude}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="longitude" class="col-3 col-form-label">
-                                Longitude</label>
-                            <div class="col-9">
-                                <input type="text" name="longitude" id="Longitude" 
-                                       class="form-control" th:value="${location.longitude}">
-                            </div>
-                        </div>
-                        <input type="hidden" name="id" th:value="${location.locationId}"/>
+                       
+                        <input type="hidden" name="heroId" th:value="${hero.heroId}"/>
                         <button type="submit" class="btn btn-primary">
-                            Update Location</button>
+                            Update Hero</button>
                     </form>
                 </div>
             </div>

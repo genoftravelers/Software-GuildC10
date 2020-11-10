@@ -7,17 +7,34 @@ package com.sg.KarmaSuperHero.dto;
 
 import java.util.List;
 import java.util.Objects;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
 public class Organization {
+
     private int organizationId;
+
+    @NotNull(message = "You must select a location")
     private Location location;
-    private List <Hero> heroes;
+
+    @NotEmpty(message = "You must select at least one hero")
+    private List<Hero> heroes;
+
+    @NotBlank(message = "Name must not be blank")
+    @Size(max = 45, message = "Name must be fewer than 45 characters")
     private String organizationName;
+
+    @NotBlank(message = "Description must not be blank")
+    @Size(max = 250, message = "Description must be fewer than 250 characters")
     private String organizationDescription;
+
+    @Size(max = 15, message = "Phone number must be fewer than 15 characters")
     private String organizationPhoneNum;
 
     public int getOrganizationId() {
@@ -118,6 +135,4 @@ public class Organization {
         return "Organization{" + "organizationId=" + organizationId + ", location=" + location + ", heroes=" + heroes + ", organizationName=" + organizationName + ", organizationDescription=" + organizationDescription + ", organizationPhoneNum=" + organizationPhoneNum + '}';
     }
 
-  
-    
 }

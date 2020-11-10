@@ -11,15 +11,15 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <title>Organization</title>
+        <title>Hero</title>
     </head>
 
     <body>
 
-        <div class="container">
+   <div class="container">
             <div class="row m-4">
                 <div class="col text-center border border-dark">
-                    <h1>Organization</h1>
+                    <h1>Hero</h1>
                 </div>
             </div>
             <div class="row m-4 border border-dark">
@@ -27,13 +27,13 @@
                     <a href="index" class="btn btn-outline-primary btn-lg">Home</a>
                 </div>
                 <div class="col text-center m-3">
-                    <a href="heroes" class="btn btn-outline-primary btn-lg">Hero</a>
+                    <a href="heroes" class="btn btn-outline-primary btn-lg active">Hero</a>
                 </div>
                 <div class="col text-center m-3">
                     <a href="locations" class="btn btn-outline-primary btn-lg">Location</a>
                 </div>
                 <div class="col text-center m-3">
-                    <a href="organizations" class="btn btn-outline-primary btn-lg active">Organization</a>
+                    <a href="organizations" class="btn btn-outline-primary btn-lg">Organization</a>
                 </div>
                 <div class="col text-center m-3">
                     <a href="sightings" class="btn btn-outline-primary btn-lg">Sighting</a>
@@ -43,103 +43,101 @@
                 </div>
 
             </div>
-        </div>  	
+        </div>  
+        
+        
         <div class="row m-4 border border-dark">
             <div class="col text-center m-3">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Organization Name</th>
-                            <th>Organization Description</th>
-                            <th>Organization phone</th>
+                            <th>Hero Name</th>
+                            <th>Hero Description</th>
+                            <!--<th>Superpower</th>-->
                             <th>Details</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="organization : ${organizations}">
-                            <td th:text="${organization.organizationId}">Organization Id</td>
-                            <td th:text="${organization.organizationName}">Organization Name</td>
-                            <td th:text="${organization.organizationDescription}">Organization Description</td>
-                            <td th:text="${organization.organizationPhoneNum}">Organization phone</td>
-                            <td><a href="#" th:href="@{/organizationDetail(id=${organization.organizationId})}">Details</a>
+                        <tr th:each="hero : ${heroes}">
+                            <td th:text="${hero.heroId}">hero Id</td>
+                            <td th:text="${hero.heroName}">hero Name</td>
+                            <td th:text="${hero.heroDescription}">hero Description</td>
+                            <td><a href="#" th:href="@{/heroDetail(id=${hero.heroId})}">Details</a>
                             </td>
 
 
-                            <td><a href="#" th:href="@{/editOrganization(id=${organization.organizationId})}">Edit</a></td>
-                            <td><a href="#" th:href="@{/deleteOrganization(id=${organization.organizationId})}">Delete</a></td>
+                            <td><a href="#" th:href="@{/editHero(id=${hero.heroId})}">Edit</a></td>
+                            <td><a href="#" th:href="@{/deleteHero(id=${hero.heroId})}">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+       
 
         <div class="row m-4 border border-dark">
-            <div class="col-12 m-1 text-center" 
-                 th:if="${!errors.isEmpty()}">
-                <p class="alert alert-danger" th:each="error : ${errors}" 
-                   th:text="${error.message}">Error message</p>
-            </div>
+             <div class="col-12 m-1 text-center" 
+             th:if="${!errors.isEmpty()}">
+            <p class="alert alert-danger" th:each="error : ${errors}" 
+               th:text="${error.message}">Error message</p>
+        </div>
             <div class="col-3 text-center m-3">
-                <span class="h3">Add Organization</span>
+                <span class="h3">Add Hero</span>
             </div>
             <div class="col-7 text-center m-3">
-                <form action="addOrganization" method="POST">
+                <form action="addHero" method="POST">
                     <div class="form-group row">
-                        <label for="organizationName" class="col-3 col-form-label">
-                            Organization Name</label>
+                        <label for="heroName" class="col-3 col-form-label">
+                            Hero Name</label>
                         <div class="col-9">
-                            <input type="text" name="organizationName" 
-                                   id="organizationName" class="form-control"/>
+                            <input type="text" name="heroName" 
+                                   id="heroName" class="form-control"/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="organizationDescription" class="col-3 col-form-label">
-                            Organization Description</label>
+                        <label for="heroDescription" class="col-3 col-form-label">
+                            Hero Description</label>
                         <div class="col-9">
-                            <input type="text" name="organizationDescription" 
-                                   id="organizationDescription" class="form-control"/>
+                            <input type="text" name="heroDescription" 
+                                   id="heroDescription" class="form-control"/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="organizationPhoneNum" class="col-3 col-form-label">
-                            Organization phone</label>
+                        <label for="superpower" class="col-3 col-form-label">
+                            Superpower</label>
                         <div class="col-9">
-                            <input type="text" name="organizationPhoneNum" 
-                                   id="organizationPhoneNum" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="location" class="col-3 col-form-label">
-                            Location</label>
-                        <div class="col-9">
-                            <select id="location" name="locationId" class="form-control" >
-                                <option th:each="location : ${locations}" 
-                                        th:value="${location.locationId}" 
-                                        th:text="${location.locationName}">
-                                    location</option>
+                            <select id="superpower" name="superpowerId" class="form-control" >
+                                <option th:each="superpower : ${superpowers}" 
+                                        th:value="${superpower.superpowerId}" 
+                                        th:text="${superpower.superpowerName}">
+                                    superpower</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="heroes" class="col-3 col-form-label">
-                            Heroes</label>
+                        <label for="organization" class="col-3 col-form-label">
+                            Organization</label>
                         <div class="col-9">
-                            <select multiple id="heroes" name="heroId" 
+                            <select multiple id="organizations" name="organizationId" 
                                     class="form-control" >
-                                <option th:each="hero : ${heroes}" 
-                                        th:value="${hero.heroId}" 
-                                        th:text="${hero.heroName}">
-                                    Hero Name</option>
+                                <option th:each="organization : ${organizations}" 
+                                        th:value="${organization.organizationId}" 
+                                        th:text="${organization.organizationName}">
+                                    Organization Name</option>
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Add Organization</button>
+                    <button type="submit" class="btn btn-primary">Add Hero</button>
                 </form>
             </div>
         </div>
+
+
+
+
 
 
 

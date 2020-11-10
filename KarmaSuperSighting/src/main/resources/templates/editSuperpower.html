@@ -42,7 +42,7 @@
         </div>  
 
         <div class="container">
-            
+
             <div class="row m-4 border border-dark">
                 <div class="col-3 text-center m-3">
                     <span class="h3">Edit Superpower</span>
@@ -55,13 +55,16 @@
                             <div class="col-9">
                                 <input type="text" name="superpowerName" id="superpowerName" 
                                        class="form-control" th:value="${superpower.superpowerName}"/>
+                                <div th:if="${#fields.hasErrors('superpower.superpowerName')}">
+                                    <p th:each="error : ${#fields.errors('superpower.superpowerName')}" class="alert alert-danger"
+                                       th:text="${error}"> Bad superpower name </p>
+                                </div>
                             </div>
-                        </div>
-                       
-                       
-                        <input type="hidden" name="id" th:value="${superpower.superpowerId}"/>
-                        <button type="submit" class="btn btn-primary">
-                            Update Superpower</button>
+
+
+                            <input type="hidden" name="id" th:value="${superpower.superpowerId}"/>
+                            <button type="submit" class="btn btn-primary">
+                                Update Superpower</button>
                     </form>
                 </div>
             </div>

@@ -6,14 +6,19 @@
 package com.sg.KarmaSuperHero.dto;
 
 import java.util.Objects;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 /**
  *
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
 public class Superpower {
-    
+
     private int superpowerId;
+
+    @NotBlank(message = "Superpower name must not be blank")
+    @Size(max = 45, message = "Superpower name must be fewer than 45 characters")
     private String superpowerName;
 
     public int getSuperpowerId() {

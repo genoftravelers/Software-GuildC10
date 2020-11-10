@@ -43,7 +43,7 @@ public class LocationController {
     public String displayLocations(Model model) {
         List<Location> locations = locationDao.getAllLocations();
         model.addAttribute("locations", locations);
-//        model.addAttribute("errors", violations);
+        model.addAttribute("errors", violations);
         return "locations";
     }
 

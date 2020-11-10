@@ -19,24 +19,31 @@
         <div class="container">
             <div class="row m-4">
                 <div class="col text-center border border-dark">
-                    <h1>Locations</h1>
+                    <h1>Location</h1>
                 </div>
             </div>
-        </div>
-        <div id="buttonNavBar" class="text-center">	
-            <a  th:href="@{index}" class="btn btn-outline-primary btn-lg"><h3>Home</h3></a>
+            <div class="row m-4 border border-dark">
+                <div class="col text-center m-3">
+                    <a href="index" class="btn btn-outline-primary btn-lg">Home</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="heroes" class="btn btn-outline-primary btn-lg">Hero</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="locations" class="btn btn-outline-primary btn-lg active">Location</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="organizations" class="btn btn-outline-primary btn-lg">Organization</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="sightings" class="btn btn-outline-primary btn-lg">Sighting</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="superpowers" class="btn btn-outline-primary btn-lg">Super Power</a>
+                </div>
 
-            <a th:href="@{heroes}" class="btn btn-outline-primary btn-lg"><h3>Heroes</h3></a>	
-            <a th:href="@{organizations}" class="btn btn-outline-primary btn-lg"><h3>Organizations</h3></a>	
-
-            <a th:href="@{sightings}" class="btn btn-outline-primary btn-lg "><h3>Sightings</h3></a>	
-
-
-            <a th:href="@{locations}" class="btn btn-outline-primary btn-lg active"><h3>Locations</h3></a>	
-
-
-            <a th:href="@{superpowers}" class="btn btn-outline-primary btn-lg"><h3>Superpowers</h3></a>	
-        </div>	
+            </div>
+        </div>  
 
         <div class="row m-4 border border-dark">
             <div class="col text-center m-3">
@@ -78,7 +85,13 @@
             </div>
         </div>
 
+
         <div class="row m-4 border border-dark">
+            <div class="col-12 m-1 text-center" 
+                 th:if="${!errors.isEmpty()}">
+                <p class="alert alert-danger" th:each="error : ${errors}" 
+                   th:text="${error.message}">Error message</p>
+            </div>
             <div class="col-3 text-center m-3">
                 <span class="h3">Add Location</span>
             </div>
@@ -126,7 +139,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="zipCode" class="col-3 col-form-label">
-                           Zip code</label>
+                            Zip code</label>
                         <div class="col-9">
                             <input type="text" name="zipCode" 
                                    id="zipCode" class="form-control"/>

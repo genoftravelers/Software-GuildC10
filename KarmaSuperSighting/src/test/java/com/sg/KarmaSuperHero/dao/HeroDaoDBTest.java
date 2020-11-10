@@ -11,12 +11,11 @@ import com.sg.KarmaSuperHero.dto.Organization;
 import com.sg.KarmaSuperHero.dto.Sighting;
 import com.sg.KarmaSuperHero.dto.Superpower;
 import java.util.List;
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -56,7 +55,7 @@ public class HeroDaoDBTest {
     public static void tearDownClass() {
     }
 
-    @Before
+    @BeforeEach
     public void setUp() {
         List<Hero> heroes = heroDao.getAllHeroes();
 

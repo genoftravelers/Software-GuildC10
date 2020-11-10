@@ -12,8 +12,11 @@ import com.sg.KarmaSuperHero.dto.Hero;
 import com.sg.KarmaSuperHero.dto.Location;
 import com.sg.KarmaSuperHero.dto.Organization;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +45,8 @@ public class OrganizationController {
 //        model.addAttribute("organizations", organizations);
 //        return "organizations";
 //    }
-//     Set<ConstraintViolation<Organization>> violations = new HashSet<>();
+    Set<ConstraintViolation<Organization>> violations = new HashSet<>();
+
     @GetMapping("organizations")
     public String displayOrganizations(Model model) {
         List<Organization> organizations = organizationDao.getAllOrganizations();
@@ -51,7 +55,7 @@ public class OrganizationController {
         model.addAttribute("organizations", organizations);
         model.addAttribute("heroes", heroes);
         model.addAttribute("locations", locations);
-//        model.addAttribute("errors", violations);
+        model.addAttribute("errors", violations);
         return "organizations";
     }
 
@@ -78,11 +82,11 @@ public class OrganizationController {
         organization.setLocation(location);
         organization.setOrganizationName(organizationName);
         organization.setOrganizationDescription(organizationDescription);
-//        Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
-//        violations = validate.validate(organization);
-//        if (violations.isEmpty()) {
+        Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
+        violations = validate.validate(organization);
+        if (violations.isEmpty()) {
         organizationDao.addOrganization(organization);
-//        }
+        }
         return "redirect:/organizations";
     }
 
@@ -111,21 +115,22 @@ public class OrganizationController {
         model.addAttribute("organization", organization);
         model.addAttribute("locations", locations);
         model.addAttribute("heroes", heroes);
-        
+
         return "editOrganization";
 
     }
+
     @PostMapping("editOrganization")
-    public String performEditOrganization(Organization organization, HttpServletRequest request){
+    public String performEditOrganization(Organization organization, HttpServletRequest request) {
         String locationId = request.getParameter("locationId");
-        String [] heroIds = request.getParameterValues("heroId");
-        
+        String[] heroIds = request.getParameterValues("heroId");
+
         organization.setLocation(locationDao.getLocationById(Integer.parseInt(locationId)));
         String organizationName = request.getParameter("organizationName");
         String organizationDescription = request.getParameter("organizationDescription");
         String organizationPhoneNum = request.getParameter("organizationPhoneNum");
-        
-        List <Hero> heroes = new ArrayList<>();
+
+        List<Hero> heroes = new ArrayList<>();
         if (heroIds != null) {
             for (String heroId : heroIds) {
                 heroes.add(heroDao.getHeroById(Integer.parseInt(heroId)));
@@ -136,28 +141,11 @@ public class OrganizationController {
         organization.setOrganizationName(organizationName);
         organization.setOrganizationDescription(organizationDescription);
         organization.setOrganizationPhoneNum(organizationPhoneNum);
-        
-        organizationDao.updateOrganization(organization);
-        
-        return "redirect:/organizations";
-        
-    }
-    
 
-//    @GetMapping("searchOrganizationsByHero")
-//    public String searchOrganizationsByHero(HttpServletRequest request, Model model) {
-//        int id = Integer.parseInt(request.getParameter("heroId"));
-//        Hero hero = heroDao.getHeroById(id);
-//        List<Organization> organizations = organizationDao.getOrganizationsByHero(hero);
-//        List<Hero> heroes = heroDao.getAllHeroes();
-//        List<Location> locations = locationDao.getAllLocations();
-//        model.addAttribute("organizations", organizations);
-//        model.addAttribute("hero", hero);
-//        model.addAttribute("heroes", heroes);
-//        model.addAttribute("locations", locations);
-//
-//        model.addAttribute("errors", violations);
-//
-//        return "searchOrganizationsByHero";
-//    }
+        organizationDao.updateOrganization(organization);
+
+        return "redirect:/organizations";
+
+    }
+
 }

@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <title>Organization Detail</title>
+        <title>Sighting Detail</title>
     </head>
 
     <body>
@@ -19,62 +19,50 @@
         <div class="container">
             <div class="row m-4">
                 <div class="col text-center border border-dark">
-                    <h1>Organization Detail</h1>
+                    <h1>Sighting Detail</h1>
                 </div>
             </div>
-            <div class="row m-4 border border-dark">
-                <div class="col text-center m-3">
-                    <a href="index" class="btn btn-outline-primary btn-lg">Home</a>
-                </div>
-                <div class="col text-center m-3">
-                    <a href="heroes" class="btn btn-outline-primary btn-lg">Hero</a>
-                </div>
-                <div class="col text-center m-3">
-                    <a href="locations" class="btn btn-outline-primary btn-lg">Location</a>
-                </div>
-                <div class="col text-center m-3">
-                    <a href="organizations" class="btn btn-outline-primary btn-lg">Organization</a>
-                </div>
-                <div class="col text-center m-3">
-                    <a href="sightings" class="btn btn-outline-primary btn-lg">Sighting</a>
-                </div>
-                <div class="col text-center m-3">
-                    <a href="superpowers" class="btn btn-outline-primary btn-lg">Super Power</a>
-                </div>
+        </div>
+        <div id="buttonNavBar" class="text-center">	
+            <a  th:href="@{index}" class="btn btn-outline-primary btn-lg"><h3>Home</h3></a>
 
-            </div>
-        </div>  
-        
-        
-       <div class="container">
-            
+            <a th:href="@{heroes}" class="btn btn-outline-primary btn-lg"><h3>Heroes</h3></a>	
+            <a th:href="@{organizations}" class="btn btn-outline-primary btn-lg"><h3>Organizations</h3></a>	
+
+            <a th:href="@{sightings}" class="btn btn-outline-primary btn-lg "><h3>Sightings</h3></a>	
+
+
+            <a th:href="@{organizations}" class="btn btn-outline-primary btn-lg"><h3>Locations</h3></a>	
+
+
+            <a th:href="@{superpowers}" class="btn btn-outline-primary btn-lg"><h3>Superpowers</h3></a>	
+        </div>	
+        <div class="container">
+
             <div class="row m-4 border border-dark">
                 <div class="col-6 text-right"><strong>ID</strong></div>
                 <div class="col-6 text-left">
-                    <span th:text="${organization.organizationId}">display id</span>
+                    <span th:text="${sighting.sightingId}">display id</span>
                 </div>
-                
-                <div class="col-6 text-right"><strong>Name</strong></div>
+
+                <div class="col-6 text-right"><strong>Date</strong></div>
                 <div class="col-6 text-left">
-                    <span th:text="${organization.organizationName}">display name</span>
+                    <span th:text="${sighting.date}">date</span>
                 </div>
-                
-                <div class="col-6 text-right"><strong>Description</strong></div>
+<!--                <div class="col-6 text-right"><strong>Date As String</strong></div>
                 <div class="col-6 text-left">
-                    <span th:text="${organization.organizationDescription}">display description</span>
-                </div>
-                <div class="col-6 text-right"><strong>organization Phone</strong></div>
-                <div class="col-6 text-left">
-                    <span th:text="${organization.organizationPhoneNum}">display phone</span>
-                </div>
+                    <span th:text="${sighting.dateAsString}">date As String</span>
+                </div>-->
+
+
                 <div class="col-6 text-right"><strong>Location</strong></div>
                 <div class="col-6 text-left">
-                    <span th:text="${organization.location.locationName + ' - ' + 
-                          organization.location.locationCity}">display location</span>
+                    <span th:text="${sighting.location.locationName + ' - ' + 
+                          sighting.location.locationCity}">display location</span>
                 </div>
                 <div class="col-6 text-right"><strong>Heroes</strong></div>
                 <div class="col-6 text-left">
-                    <span th:each="hero : ${organization.heroes}">
+                    <span th:each="hero : ${sighting.hero}">
                         <span th:text="${hero.heroName}">
                             display hero</span><br/>
                     </span>

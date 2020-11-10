@@ -5,8 +5,11 @@
  */
 package com.sg.KarmaSuperHero.dao;
 
+import com.sg.KarmaSuperHero.dao.LocationDaoDB.LocationMapper;
+import com.sg.KarmaSuperHero.dao.OrganizationDaoDB.OrganizationMapper;
 import com.sg.KarmaSuperHero.dao.SuperpowerDaoDB.SuperpowerMapper;
 import com.sg.KarmaSuperHero.dto.Hero;
+import com.sg.KarmaSuperHero.dto.Location;
 import com.sg.KarmaSuperHero.dto.Organization;
 import com.sg.KarmaSuperHero.dto.Superpower;
 import java.sql.ResultSet;
@@ -33,8 +36,10 @@ public class HeroDaoDB implements HeroDao {
         try {
             final String GET_HERO_BY_ID = "SELECT * FROM Hero WHERE heroId = ?";
             Hero hero = jdbc.queryForObject(GET_HERO_BY_ID, new HeroMapper(), id);
-            
+
             hero.setSuperPower(getSuperpowerForHero(id));
+
+            hero.setOrganizations(getOrganizationForHero(hero.getHeroId()));
 
             return hero;
 
@@ -51,6 +56,7 @@ public class HeroDaoDB implements HeroDao {
 
         for (Hero hero : heroes) {
             hero.setSuperPower(getSuperpowerForHero(hero.getHeroId()));
+            hero.setOrganizations(getOrganizationForHero(hero.getHeroId()));
         }
         return heroes;
     }
@@ -66,8 +72,8 @@ public class HeroDaoDB implements HeroDao {
 
         int newId = jdbc.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
         hero.setHeroId(newId);
-        
-        
+
+        insertHeroOrganization(hero);
 
         return hero;
     }
@@ -88,7 +94,7 @@ public class HeroDaoDB implements HeroDao {
 
     @Override
     public void deleteHeroById(int id) {
-        
+
         final String DELETE_HERO_SIGHTING = "DELETE FROM Sighting WHERE heroId = ?";
         jdbc.update(DELETE_HERO_SIGHTING, id);
 
@@ -115,15 +121,15 @@ public class HeroDaoDB implements HeroDao {
         return heroes;
     }
 
-    @Override
-    public void insertHeroOrganization(Hero hero, List<Integer> orgIds) {
-        final String INSERT_HERO_ORGANIZATION = "INSERT INTO "
+    private void insertHeroOrganization(Hero hero) {
+        final String INSERT_ORGANIZATION_HERO = "INSERT INTO "
                 + "HeroOrganization(heroId, organizationId) VALUES(?,?)";
         try {
-            for (Integer i : orgIds) {
-                jdbc.update(INSERT_HERO_ORGANIZATION,
+            for (Organization organization : hero.getOrganizations()) {
+                jdbc.update(INSERT_ORGANIZATION_HERO,
                         hero.getHeroId(),
-                        i);
+                        organization.getOrganizationId());
+                      
             }
         } catch (NullPointerException ex) {
 
@@ -150,9 +156,26 @@ public class HeroDaoDB implements HeroDao {
 
     //Helper Methods
     private Superpower getSuperpowerForHero(int id) {
-        final String SELECT_SUPERPOWER_FOR_HERO = "SELECT s.*" + " FROM Superpower s JOIN Hero h ON h.superpowerId = s.superpowerId WHERE h.heroId = ?";
+        final String SELECT_SUPERPOWER_FOR_HERO = "SELECT s.* FROM Superpower s JOIN Hero h ON h.superpowerId = s.superpowerId WHERE h.heroId = ?";
         Superpower thisPower = jdbc.queryForObject(SELECT_SUPERPOWER_FOR_HERO, new SuperpowerMapper(), id);
         return thisPower;
+    }
+
+    private List<Organization> getOrganizationForHero(int id) {
+        final String SELECT_ORGANIZATION_FOR_HERO = "SELECT o.* FROM Organization o JOIN HeroOrganization ho ON ho.organizationId = o.OrganizationId WHERE ho.heroId =?";
+        List<Organization> organizations = jdbc.query(SELECT_ORGANIZATION_FOR_HERO, new OrganizationMapper(), id);
+
+        for (Organization organization : organizations) {
+            final String SELECT_LOCATION_FOR_HERO = "SELECT l.* FROM location l "
+                    + "JOIN organization o ON o.locationId = l.locationId WHERE o.organizationId =?";
+            Location thisLocation = jdbc.queryForObject(SELECT_LOCATION_FOR_HERO, new LocationMapper(), organization.getOrganizationId());
+            organization.setLocation(thisLocation);
+        }
+
+        if (organizations.isEmpty()) {
+            organizations = null;
+        }
+        return organizations;
     }
 
     //Mapper
