@@ -65,8 +65,9 @@ public class HeroController {
     public String addHero(Hero hero, HttpServletRequest request) {
         String superpowerId = request.getParameter("superpowerId");
         String[] organizationIds = request.getParameterValues("organizationId");
-
-        hero.setSuperPower(superpowerDao.getSuperpowerById(Integer.parseInt(superpowerId)));
+        if (superpowerId != null) {
+            hero.setSuperPower(superpowerDao.getSuperpowerById(Integer.parseInt(superpowerId)));
+        }
 
         List<Organization> organizations = new ArrayList<>();
         if (organizationIds != null) {
@@ -123,8 +124,12 @@ public class HeroController {
         String heroDescription = request.getParameter("heroDescription");
 
         List<Organization> organizations = new ArrayList<>();
-        for (String organizationId : organizationIds) {
-            organizations.add(organizationDao.getOrganizationById(Integer.parseInt(organizationId)));
+        if (organizationIds != null) {
+            for (String organizationId : organizationIds) {
+
+                organizations.add(organizationDao.getOrganizationById(Integer.parseInt(organizationId)));
+
+            }
         }
         hero.setOrganizations(organizations);
         hero.setHeroName(heroName);

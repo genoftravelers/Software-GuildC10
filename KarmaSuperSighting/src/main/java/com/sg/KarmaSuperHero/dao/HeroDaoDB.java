@@ -73,8 +73,9 @@ public class HeroDaoDB implements HeroDao {
         int newId = jdbc.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
         hero.setHeroId(newId);
 
-        insertHeroOrganization(hero);
-
+        if (hero.getOrganizations() != null) {
+            insertHeroOrganization(hero);
+        }
         return hero;
     }
 
@@ -90,6 +91,9 @@ public class HeroDaoDB implements HeroDao {
 
         final String DELETE_HERO_ORGANIZATION = "DELETE FROM HeroOrganization WHERE heroId = ?";
         jdbc.update(DELETE_HERO_ORGANIZATION, hero.getHeroId());
+
+        insertHeroOrganization(hero);
+
     }
 
     @Override
@@ -126,10 +130,11 @@ public class HeroDaoDB implements HeroDao {
                 + "HeroOrganization(heroId, organizationId) VALUES(?,?)";
         try {
             for (Organization organization : hero.getOrganizations()) {
-                jdbc.update(INSERT_ORGANIZATION_HERO,
-                        hero.getHeroId(),
-                        organization.getOrganizationId());
-                      
+//                if (organization != null) {
+                    jdbc.update(INSERT_ORGANIZATION_HERO,
+                            hero.getHeroId(),
+                            organization.getOrganizationId());
+//                }
             }
         } catch (NullPointerException ex) {
 

@@ -69,7 +69,14 @@ public class OrganizationController {
                 heroes.add(heroDao.getHeroById(Integer.parseInt(heroID)));
             }
         }
-        Location location = locationDao.getLocationById(Integer.parseInt(request.getParameter("locationId")));
+
+        String locationId = request.getParameter("locationId");
+        Location location = null;
+        if (locationId != null) {
+
+            location = locationDao.getLocationById(Integer.parseInt(locationId));
+        }
+
         String organizationName = request.getParameter("organizationName");
         String organizationDescription = request.getParameter("organizationDescription");
 
@@ -85,7 +92,7 @@ public class OrganizationController {
         Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
         violations = validate.validate(organization);
         if (violations.isEmpty()) {
-        organizationDao.addOrganization(organization);
+            organizationDao.addOrganization(organization);
         }
         return "redirect:/organizations";
     }
@@ -124,8 +131,9 @@ public class OrganizationController {
     public String performEditOrganization(Organization organization, HttpServletRequest request) {
         String locationId = request.getParameter("locationId");
         String[] heroIds = request.getParameterValues("heroId");
-
-        organization.setLocation(locationDao.getLocationById(Integer.parseInt(locationId)));
+        if (locationId != null) {
+            organization.setLocation(locationDao.getLocationById(Integer.parseInt(locationId)));
+        }
         String organizationName = request.getParameter("organizationName");
         String organizationDescription = request.getParameter("organizationDescription");
         String organizationPhoneNum = request.getParameter("organizationPhoneNum");

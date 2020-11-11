@@ -23,7 +23,7 @@ public class Organization {
     @NotNull(message = "You must select a location")
     private Location location;
 
-    @NotEmpty(message = "You must select at least one hero")
+//    @NotEmpty(message = "You must select at least one hero")
     private List<Hero> heroes;
 
     @NotBlank(message = "Name must not be blank")

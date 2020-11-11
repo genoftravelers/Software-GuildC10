@@ -5,6 +5,7 @@
  */
 package com.sg.KarmaSuperHero.dao;
 
+import com.sg.KarmaSuperHero.TestApplicationConfiguration;
 import com.sg.KarmaSuperHero.dto.Superpower;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
@@ -24,7 +25,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = TestApplicationConfiguration.class)
 public class SuperpowerDaoDBTest {
 
     @Autowired

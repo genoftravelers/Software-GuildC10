@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -26,10 +27,11 @@ public class Hero {
     @NotEmpty(message = "Description must not be empty")
     @Size(max = 250, message = "Description must be fewer than 250 characters")
     private String heroDescription;
-
+    
+    @NotNull(message = "superpower must not be empty")
     private Superpower superPower;
 
-    @NotEmpty(message = "Organizations must not be empty")
+//    @NotEmpty(message = "Organizations must not be empty")
     private List<Organization> organizations;
 
     public int getHeroId() {

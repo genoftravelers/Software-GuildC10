@@ -80,12 +80,19 @@ public class SightingController {
         } catch (Exception e) {
             date = null;
         }
-        int heroID = Integer.parseInt(request.getParameter("heroId"));
-        int locationID = Integer.parseInt(request.getParameter("locationId"));
+        String heroID = request.getParameter("heroId");
+        String locationID = request.getParameter("locationId");
+
         Sighting sighting = new Sighting();
-        sighting.setLocation(locationDao.getLocationById(locationID));
+        if (locationID != null) {
+            sighting.setLocation(locationDao.getLocationById(Integer.parseInt(locationID)));
+        }
+
+        if (heroID != null) {
+            sighting.setHero(heroDao.getHeroById(Integer.parseInt(heroID)));
+        }
         sighting.setDate(date);
-        sighting.setHero(heroDao.getHeroById(heroID));
+
         Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
         violations = validate.validate(sighting);
         if (violations.isEmpty()) {
@@ -93,13 +100,13 @@ public class SightingController {
         }
         return "redirect:/sightings";
     }
-
-    @GetMapping("sightingDetail")
-    public String sightingDetail(Integer id, Model model) {
-        Sighting sighting = sightingDao.getSightingById(id);
-        model.addAttribute("sighting", sighting);
-        return "sightingDetail";
-    }
+//
+//    @GetMapping("sightingDetail")
+//    public String sightingDetail(Integer id, Model model) {
+//        Sighting sighting = sightingDao.getSightingById(id);
+//        model.addAttribute("sighting", sighting);
+//        return "sightingDetail";
+//    }
 
     @GetMapping("deleteSighting")
     public String deleteSighting(HttpServletRequest request) {

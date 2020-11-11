@@ -111,7 +111,9 @@ public class OrganizationDaoDB implements OrganizationDao {
     }
 
     private List<Hero> getHerosForOrganization(int id) {
+        
         final String GET_HEROS_FOR_ORGANIZATION = "SELECT h.*" + " FROM hero h JOIN HeroOrganization o ON o.heroId = h.heroId WHERE o.organizationId = ?";
+        
         List<Hero> heros = jdbc.query(GET_HEROS_FOR_ORGANIZATION, new HeroMapper(), id);
 
         for (Hero hero : heros) {

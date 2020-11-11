@@ -46,7 +46,7 @@ public class LocationDaoDB implements LocationDao {
 
         int newId = jdbc.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
         location.setLocationId(newId);
-        
+
         return location;
     }
 
@@ -88,20 +88,14 @@ public class LocationDaoDB implements LocationDao {
     @Transactional
     public void deleteLocationById(int id) {
 
-        List<Organization> organizationsAtLocation = new ArrayList();
-        List<Integer> organizationIDs = new ArrayList();
-
         final String GET_ORGANIZATION_BY_LOCATION = "SELECT * FROM Organization WHERE locationId = ?";
-        organizationsAtLocation = jdbc.query(GET_ORGANIZATION_BY_LOCATION, new OrganizationMapper(), id);
 
-        for (Organization i : organizationsAtLocation) {
-            organizationIDs.add(i.getOrganizationId());
-        }
-        for (int j : organizationIDs) {
-            final String DELETE_ORGANIZATIONS_FROM_HEROES = "DELETE ho.* FROM HeroOrganization ho "
-                    + "Join Organization o ON o.organizationId=ho.organizationId "
-                    + " WHERE o.locationId = ?";
-            jdbc.update(DELETE_ORGANIZATIONS_FROM_HEROES, j);
+        List<Organization> organizationsAtLocation = jdbc.query(GET_ORGANIZATION_BY_LOCATION, new OrganizationMapper(), id);
+        
+        for (Organization organization : organizationsAtLocation) {
+            final String DELETE_HEROORGANIZATION = "DELETE FROM HeroOrganization WHERE organizationId=?";
+            jdbc.update(DELETE_HEROORGANIZATION, organization.getOrganizationId());
+            
         }
 
         final String DELETE_ORGANIZATION_BY_LOCATION = "DELETE FROM Organization WHERE locationId = ?";
@@ -128,7 +122,6 @@ public class LocationDaoDB implements LocationDao {
             location.setZipCode(rs.getString("zipcode"));
             location.setLatitude(rs.getBigDecimal("latitude"));
             location.setLongitude(rs.getBigDecimal("longitude"));
-            
 
             return location;
         }

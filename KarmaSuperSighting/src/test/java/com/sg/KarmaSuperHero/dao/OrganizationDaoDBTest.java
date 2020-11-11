@@ -5,6 +5,7 @@
  */
 package com.sg.KarmaSuperHero.dao;
 
+import com.sg.KarmaSuperHero.TestApplicationConfiguration;
 import com.sg.KarmaSuperHero.dto.Hero;
 import com.sg.KarmaSuperHero.dto.Location;
 import com.sg.KarmaSuperHero.dto.Organization;
@@ -31,7 +32,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author Karma Dolkar <krmdlkr@gmail.com>
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = TestApplicationConfiguration.class)
 public class OrganizationDaoDBTest {
 
     @Autowired

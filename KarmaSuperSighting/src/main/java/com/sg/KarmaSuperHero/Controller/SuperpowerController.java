@@ -44,8 +44,11 @@ public class SuperpowerController {
 
     @PostMapping("addSuperpower")
     public String addSuperpower(HttpServletRequest request) {
+        
         String powerName = request.getParameter("superpowerName");
+        
         Superpower superpower = new Superpower();
+        
         superpower.setSuperpowerName(powerName);
 
 //        superpowerDao.addSuperpower(superpower);

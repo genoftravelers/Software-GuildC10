@@ -100,11 +100,13 @@
                                             th:value="${hero.heroId}" 
                                             th:text="${hero.heroName + ' ' 
                                             + hero.heroDescription}"
+
                                             th:selected="${organization.heroes.contains(hero)}">
                                         Hero Name</option>
                                 </select>
                             </div>
                         </div>
+
                         <input type="hidden" name="organizationId" th:value="${organization.organizationId}"/>
                         <button type="submit" class="btn btn-primary">Edit Organization</button>
                     </form>
