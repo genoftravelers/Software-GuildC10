@@ -11,6 +11,9 @@ import com.sg.KarmaSuperHero.dto.Location;
 import com.sg.KarmaSuperHero.dto.Organization;
 import com.sg.KarmaSuperHero.dto.Sighting;
 import com.sg.KarmaSuperHero.dto.Superpower;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -177,21 +180,67 @@ public class HeroDaoDBTest {
      */
     @Test
     public void testDeleteHeroById() {
+
         Superpower shapeShifting = new Superpower();
         shapeShifting.setSuperpowerName("Shape Shifting");
-
         shapeShifting = superpowerDao.addSuperpower(shapeShifting);
 
-        Hero kingkong = new Hero();
-        kingkong.setHeroName("KingKong");
-        kingkong.setHeroDescription("break and remake");
-        kingkong.setSuperPower(shapeShifting);
+        Hero hero = new Hero();
+        hero.setHeroName("Supergirl");
+        hero.setHeroDescription("super string");
+        hero.setSuperPower(shapeShifting);
+        hero = heroDao.addHero(hero);
 
-        kingkong = heroDao.addHero(kingkong);
+        Hero fromDao = heroDao.getHeroById(hero.getHeroId());
+        assertEquals(hero, fromDao);
 
-        heroDao.deleteHeroById(kingkong.getHeroId());
+        Location location = new Location();
+        location.setLocationName("Cool city");
+        location.setLocationDescription("Diversed");
+        location.setLocationAddress("37-94 Judge steet");
+        location.setLocationCity("Jackson Heights");
+        location.setLocationState("NY");
+        location.setZipCode("11372");
+        location.setLatitude(new BigDecimal("90.744715"));
+        location.setLongitude(new BigDecimal("-83.785605"));
+        location = locationDao.addLocation(location);
 
-        assertNull(heroDao.getHeroById(kingkong.getHeroId()));
+        Organization organization = new Organization();
+        organization.setOrganizationName("Zen");
+        organization.setOrganizationDescription("Hidden under the Dessert");
+        organization.setOrganizationPhoneNum("9292459121");
+        organization.setLocation(location);
+
+        List<Hero> heroes = new ArrayList<>();
+        heroes.add(hero);
+        organization.setHeroes(heroes);
+        organization = organizationDao.addOrganization(organization);
+
+        Organization orgFromDao = organizationDao.getOrganizationById(organization.getOrganizationId());
+        assertEquals(organization, orgFromDao);
+
+        Sighting firstSighting = new Sighting();
+        LocalDate date = LocalDate.parse("2017-02-05");
+        firstSighting.setDate(date);
+        firstSighting.setLocation(location);
+        firstSighting.setHero(hero);
+        firstSighting = sightingDao.addSighting(firstSighting);
+
+        Sighting sightingFromDao = sightingDao.getSightingById(firstSighting.getSightingId());
+        assertEquals(firstSighting, sightingFromDao);
+        //delete the hero
+        heroDao.deleteHeroById(hero.getHeroId());
+        //then get hero, org and sighting from dao
+        fromDao = heroDao.getHeroById(hero.getHeroId());
+        orgFromDao = organizationDao.getOrganizationById(organization.getOrganizationId());
+        sightingFromDao = sightingDao.getSightingById(firstSighting.getSightingId());
+        
+        assertNull(fromDao);
+        //asserting if the hero is deleted from the organization
+        assertNull(orgFromDao.getHeroes());
+        assertNull(sightingFromDao);
+
+//        assertNull(heroDao.getHeroById(hero.getHeroId()));
     }
 
     /**

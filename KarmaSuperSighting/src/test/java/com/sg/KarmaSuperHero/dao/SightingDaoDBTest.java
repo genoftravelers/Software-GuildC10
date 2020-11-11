@@ -255,53 +255,74 @@ public class SightingDaoDBTest {
     @Test
     public void testDeleteSightingById() {
 
-        Superpower mindReading = new Superpower();
-        mindReading.setSuperpowerName("Flight");
-        mindReading = superpowerDao.addSuperpower(mindReading);
-        Hero Spiderman = new Hero();
-        Spiderman.setHeroName("Spiderman");
-        Spiderman.setHeroDescription("flies");
-        Spiderman.setSuperPower(mindReading);
+        Superpower superpower = new Superpower();
+        superpower.setSuperpowerName("Shape shifting");
+        superpower = superpowerDao.addSuperpower(superpower);
 
-        Spiderman = heroDao.addHero(Spiderman);
+        Hero hero = new Hero();
+        hero.setHeroName("Supergirl");
+        hero.setHeroDescription("super string");
+        hero.setSuperPower(superpower);
+        hero = heroDao.addHero(hero);
 
-        BigDecimal latitude = new BigDecimal("32.515000");
-        BigDecimal longitude = new BigDecimal("75.255000");
+        Hero heroFromDao = heroDao.getHeroById(hero.getHeroId());
+        assertEquals(hero, heroFromDao);
 
-        Location thePost = new Location();
-        thePost.setLocationDescription("calm the mind");
-        thePost.setLocationAddress("454 The way");
-        thePost.setLocationCity("Queens");
-        thePost.setLocationState("NY");
-        thePost.setZipCode("11372");
-        thePost.setLocationName("The post");
-        thePost.setLatitude(latitude);
-        thePost.setLongitude(longitude);
+        Location location = new Location();
+        location.setLocationName("Cool city");
+        location.setLocationDescription("Diversed");
+        location.setLocationAddress("37-94 Judget steet, Jackson Heights, NY 11372");
+        location.setLocationCity("Jackson Heights");
+        location.setLocationState("NY");
+        location.setZipCode("11372");
+        location.setLatitude(new BigDecimal("90.744715"));
+        location.setLongitude(new BigDecimal("-83.785605"));
 
-        thePost = locationDao.addLocation(thePost);
+        location = locationDao.addLocation(location);
+
+        Location locationFromDao = locationDao.getLocationById(location.getLocationId());
+        assertEquals(location, locationFromDao);
+
+        Organization organization = new Organization();
+        organization.setOrganizationName("Zen");
+        organization.setOrganizationDescription("Hidden under the Dessert");
+        organization.setOrganizationPhoneNum("9292459121");
+        organization.setLocation(location);
+
+        List<Hero> heroes = new ArrayList<>();
+        heroes.add(hero);
+        organization.setHeroes(heroes);
+        organization = organizationDao.addOrganization(organization);
+
+        Organization orgFromDao = organizationDao.getOrganizationById(organization.getOrganizationId());
+        assertEquals(organization, orgFromDao);
 
         Sighting currentSighting = new Sighting();
 
         LocalDate date = LocalDate.parse("2015-06-17");
 
         currentSighting.setDate(date);
-        currentSighting.setHero(Spiderman);
-        currentSighting.setLocation(thePost);
+        currentSighting.setHero(hero);
+        currentSighting.setLocation(location);
 
         currentSighting = sightingDao.addSighting(currentSighting);
 
-        LocalDate newDate = LocalDate.parse("2016-09-05");
-        currentSighting.setDate(date);
-        currentSighting.setHero(Spiderman);
-        currentSighting.setLocation(thePost);
-
-        currentSighting = sightingDao.addSighting(currentSighting);
+        Sighting sightingFromDao = sightingDao.getSightingById(currentSighting.getSightingId());
+        assertEquals(currentSighting, sightingFromDao);
 
         sightingDao.deleteSightingById(currentSighting.getSightingId());
 
-        Sighting result = sightingDao.getSightingById(currentSighting.getSightingId());
+        //getting below to see if they are not null
+        sightingFromDao = sightingDao.getSightingById(currentSighting.getSightingId());
+        heroFromDao = heroDao.getHeroById(hero.getHeroId());
+        locationFromDao = locationDao.getLocationById(location.getLocationId());
+        orgFromDao = organizationDao.getOrganizationById(organization.getOrganizationId());
 
-        assertNull(result);
+        assertNull(sightingFromDao);
+        assertNotNull(heroFromDao);
+        assertNotNull(locationFromDao);
+        assertNotNull(orgFromDao);
+
     }
 
     /**
@@ -471,7 +492,7 @@ public class SightingDaoDBTest {
      */
     @Test
     public void testGetSightingsFromDate() {
-        
+
         Superpower mindReading = new Superpower();
         mindReading.setSuperpowerName("Flight");
         mindReading = superpowerDao.addSuperpower(mindReading);
@@ -516,17 +537,15 @@ public class SightingDaoDBTest {
         sightingTwo.setLocation(thePost);
 
         sightingTwo = sightingDao.addSighting(sightingTwo);
-        
-        
 
         List<Sighting> sightings = new ArrayList<>();
         sightings.add(sightingOne);
         sightings.add(sightingTwo);
 
-       List <Sighting> result = sightingDao.getAllSightings();
-       
+        List<Sighting> result = sightingDao.getAllSightings();
+
         assertEquals(sightings, result);
-       
+
     }
 
 }

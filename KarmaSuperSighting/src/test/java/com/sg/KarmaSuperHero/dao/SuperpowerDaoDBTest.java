@@ -6,9 +6,17 @@
 package com.sg.KarmaSuperHero.dao;
 
 import com.sg.KarmaSuperHero.TestApplicationConfiguration;
+import com.sg.KarmaSuperHero.dto.Hero;
+import com.sg.KarmaSuperHero.dto.Location;
+import com.sg.KarmaSuperHero.dto.Organization;
+import com.sg.KarmaSuperHero.dto.Sighting;
 import com.sg.KarmaSuperHero.dto.Superpower;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.AfterAll;
@@ -135,14 +143,62 @@ public class SuperpowerDaoDBTest {
     public void testDeleteSuperpowerById() {
         Superpower superpower = new Superpower();
         superpower.setSuperpowerName("flight");
-        superpowerDao.addSuperpower(superpower);
+        superpower = superpowerDao.addSuperpower(superpower);
+
+        Hero hero = new Hero();
+        hero.setHeroName("Supergirl");
+        hero.setHeroDescription("strong");
+        hero.setSuperPower(superpower);
+        hero = heroDao.addHero(hero);
+
+        Hero heroFromDao = heroDao.getHeroById(hero.getHeroId());
+        assertEquals(hero, heroFromDao);
+        assertNotNull(heroFromDao);
+
+        Location location = new Location();
+        location.setLocationName("Cool city");
+        location.setLocationDescription("Diversed");
+        location.setLocationAddress("37-94 Judget steet, Jackson Heights, NY 11372");
+        location.setLocationCity("Jackson Heights");
+        location.setLocationState("NY");
+        location.setZipCode("11372");
+        location.setLatitude(new BigDecimal("90.744715"));
+        location.setLongitude(new BigDecimal("-83.785605"));
+
+        location = locationDao.addLocation(location);
+
+        Organization organization = new Organization();
+
+        organization.setOrganizationName("Zen");
+        organization.setOrganizationDescription("Hidden under the Dessert");
+        organization.setOrganizationPhoneNum("9292459121");
+        organization.setLocation(location);
+
+        List<Hero> heroes = new ArrayList<>();
+        heroes.add(hero);
+        organization.setHeroes(heroes);
+        organizationDao.addOrganization(organization);
+
+        Sighting firstSighting = new Sighting();
+
+        LocalDate date = LocalDate.parse("2017-02-05");
+
+        firstSighting.setDate(date);
+        firstSighting.setHero(hero);
+        firstSighting.setLocation(location);
+
+        firstSighting = sightingDao.addSighting(firstSighting);
 
         Superpower fromDao = superpowerDao.getSuperpowerById(superpower.getSuperpowerId());
 
         assertEquals(superpower, fromDao);
         superpowerDao.deleteSuperpowerById(superpower.getSuperpowerId());
+
         fromDao = superpowerDao.getSuperpowerById(superpower.getSuperpowerId());
+        heroFromDao = heroDao.getHeroById(hero.getHeroId());
+
         assertNull(fromDao);
+        assertNull(heroFromDao);
     }
 
 }

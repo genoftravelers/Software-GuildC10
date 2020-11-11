@@ -12,6 +12,7 @@ import com.sg.KarmaSuperHero.dto.Organization;
 import com.sg.KarmaSuperHero.dto.Sighting;
 import com.sg.KarmaSuperHero.dto.Superpower;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -240,33 +241,54 @@ public class OrganizationDaoDBTest {
      */
     @Test
     public void testDeleteOrganizationById() {
-         BigDecimal latitude = new BigDecimal("34.355000");
-        BigDecimal longitude = new BigDecimal("57.545000");
 
-        Location GrandCentralTerminal = new Location();
-        GrandCentralTerminal.setLocationDescription("All calm");
-        GrandCentralTerminal.setLocationAddress("1234 This way");
-        GrandCentralTerminal.setLocationCity("D.C");
-        GrandCentralTerminal.setLocationState("NY");
-        GrandCentralTerminal.setZipCode("11377");
-        GrandCentralTerminal.setLocationName("Manhattan");
-        GrandCentralTerminal.setLatitude(latitude);
-        GrandCentralTerminal.setLongitude(longitude);
+        Superpower superpower = new Superpower();
+        superpower.setSuperpowerName("Shape shifting");
+        superpower = superpowerDao.addSuperpower(superpower);
 
-        GrandCentralTerminal = locationDao.addLocation(GrandCentralTerminal);
+        Hero hero = new Hero();
+        hero.setHeroName("Supergirl");
+        hero.setHeroDescription("super string");
+        hero.setSuperPower(superpower);
+        heroDao.addHero(hero);
 
-        Organization theUnion = new Organization();
+        Hero heroFromDao = heroDao.getHeroById(hero.getHeroId());
+        assertEquals(hero, heroFromDao);
 
-        theUnion.setOrganizationName("Name Organization");
-        theUnion.setOrganizationDescription("Hidden under the  dessert");
-        theUnion.setOrganizationPhoneNum("9292459121");
-        theUnion.setLocation(GrandCentralTerminal);
+        Location location = new Location();
+        location.setLocationName("Cool city");
+        location.setLocationDescription("Diversed");
+        location.setLocationAddress("37-94 Judget steet, Jackson Heights, NY 11372");
+        location.setLocationCity("Jackson Heights");
+        location.setLocationState("NY");
+        location.setZipCode("11372");
+        location.setLatitude(new BigDecimal("90.744715"));
+        location.setLongitude(new BigDecimal("-83.785605"));
+        location = locationDao.addLocation(location);
 
-        theUnion = organizationDao.addOrganization(theUnion);
-        
-        organizationDao.deleteOrganizationById(theUnion.getOrganizationId());
-        assertNull(organizationDao.getOrganizationById(theUnion.getOrganizationId()));
-        
+        Organization organization = new Organization();
+        organization.setOrganizationName("Zen");
+        organization.setOrganizationDescription("Hidden under the Dessert");
+        organization.setOrganizationPhoneNum("9292459121");
+        organization.setLocation(location);
+
+        List<Hero> heroes = new ArrayList<>();
+        heroes.add(hero);
+        organization.setHeroes(heroes);
+        organization = organizationDao.addOrganization(organization);
+
+        Organization fromDao = organizationDao.getOrganizationById(organization.getOrganizationId());
+        assertEquals(organization, fromDao);
+        assertNotNull(fromDao.getHeroes());
+
+        organizationDao.deleteOrganizationById(organization.getOrganizationId());
+
+        heroFromDao = heroDao.getHeroById(hero.getHeroId());
+
+        fromDao = organizationDao.getOrganizationById(organization.getOrganizationId());
+        assertNull(fromDao);
+        assertNull(heroFromDao.getOrganizations());
+
     }
 
 }

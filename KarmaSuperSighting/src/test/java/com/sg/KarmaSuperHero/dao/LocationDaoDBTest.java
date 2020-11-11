@@ -6,10 +6,17 @@
 package com.sg.KarmaSuperHero.dao;
 
 import com.sg.KarmaSuperHero.TestApplicationConfiguration;
+import com.sg.KarmaSuperHero.dto.Hero;
 import com.sg.KarmaSuperHero.dto.Location;
+import com.sg.KarmaSuperHero.dto.Organization;
+import com.sg.KarmaSuperHero.dto.Sighting;
+import com.sg.KarmaSuperHero.dto.Superpower;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.AfterAll;
@@ -159,6 +166,19 @@ public class LocationDaoDBTest {
     @Test
     public void testDeleteLocationById() {
 
+        Superpower superpower = new Superpower();
+        superpower.setSuperpowerName("Shape shifting");
+        superpower = superpowerDao.addSuperpower(superpower);
+
+        Hero hero = new Hero();
+        hero.setHeroName("Supergirl");
+        hero.setHeroDescription("super string");
+        hero.setSuperPower(superpower);
+        hero = heroDao.addHero(hero);
+
+        Hero fromDao = heroDao.getHeroById(hero.getHeroId());
+        assertEquals(hero, fromDao);
+
         Location location = new Location();
         location.setLocationName("Cool city");
         location.setLocationDescription("Diversed");
@@ -170,12 +190,64 @@ public class LocationDaoDBTest {
         location.setLongitude(new BigDecimal("-83.785605"));
 
         location = locationDao.addLocation(location);
+        
 
-        Location fromDao = locationDao.getLocationById(location.getLocationId());
+        Location locationFromDao = locationDao.getLocationById(location.getLocationId());
+        assertEquals(location, locationFromDao);
 
-        assertEquals(location, fromDao);
+        Organization organization = new Organization();
+
+        organization.setOrganizationName("Zen");
+        organization.setOrganizationDescription("Hidden under the Dessert");
+        organization.setOrganizationPhoneNum("9292459121");
+        organization.setLocation(location);
+
+        List<Hero> heroes = new ArrayList<>();
+        heroes.add(hero);
+        organization.setHeroes(heroes);
+
+        organization = organizationDao.addOrganization(organization);
+
+        Organization orgFromDao = organizationDao.getOrganizationById(organization.getOrganizationId());
+        assertEquals(organization, orgFromDao);
+
+        Organization organization2 = new Organization();
+
+        organization2.setOrganizationName("Zen2");
+        organization2.setOrganizationDescription("Hidden under the Dessert2");
+        organization2.setOrganizationPhoneNum("9292459121");
+        organization2.setLocation(location);
+
+        organization2.setHeroes(heroes);
+        organization2 = organizationDao.addOrganization(organization2);
+
+        Organization org2FromDao = organizationDao.getOrganizationById(organization2.getOrganizationId());
+        assertEquals(organization2, org2FromDao);
+
+        Sighting firstSighting = new Sighting();
+
+        LocalDate date = LocalDate.parse("2017-02-05");
+
+        firstSighting.setDate(date);
+        firstSighting.setHero(hero);
+        firstSighting.setLocation(location);
+
+        firstSighting = sightingDao.addSighting(firstSighting);
+
+        Sighting sightingFromDao = sightingDao.getSightingById(firstSighting.getSightingId());
+
+        assertEquals(firstSighting, sightingFromDao);
+
         locationDao.deleteLocationById(location.getLocationId());
-        fromDao = locationDao.getLocationById(location.getLocationId());
-        assertNull(fromDao);
+        locationFromDao =locationDao.getLocationById(location.getLocationId());
+        orgFromDao = organizationDao.getOrganizationById(organization.getOrganizationId());
+        sightingFromDao = sightingDao.getSightingById(firstSighting.getSightingId());
+
+        assertNull(locationFromDao);
+        //Cheking if organization is deleted
+        assertNull(orgFromDao);
+        //Check if the sighting is deleted
+        assertNull(sightingFromDao);
+
     }
 }
